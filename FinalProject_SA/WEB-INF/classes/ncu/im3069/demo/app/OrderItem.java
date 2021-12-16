@@ -15,7 +15,7 @@ public class OrderItem {
     private int quantity;
 
     /** price，產品價格 */
-    private double price;
+    private int price;
 
     /** subtotal，產品小計 */
     private double subtotal;
@@ -48,7 +48,7 @@ public class OrderItem {
      * @param quantity 產品數量
      * @param subtotal 小計
      */
-    public OrderItem(int order_product_id, int order_id, int product_id, double price, int quantity, double subtotal) {
+    public OrderItem(int order_product_id, int order_id, int product_id, int price, int quantity, double subtotal) {
         setId(order_product_id);
         setQuantity(quantity);
         setPrice(price);
@@ -103,7 +103,7 @@ public class OrderItem {
      *
      * @return double 回傳產品價格
      */
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price=price;
     }    
 
