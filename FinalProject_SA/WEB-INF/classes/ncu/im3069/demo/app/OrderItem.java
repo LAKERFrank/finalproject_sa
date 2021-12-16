@@ -4,10 +4,17 @@ import org.json.JSONObject;
 import ncu.im3069.demo.util.Arith;
 
 public class OrderItem {
+<<<<<<< HEAD
 
     /** id，產品細項編號 0000000000000000000000000000000008888888888888888*/
     private int id;
 
+=======
+//	00000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    /** product_index，產品細項編號 */
+    private int product_index;
+    
+>>>>>>> 8de94c5e9b2931e4204fb497c8541f11695244bd
     /** pd，產品 */
     private Product pd;
 
@@ -31,8 +38,8 @@ public class OrderItem {
      * @param quantity 會員密碼
      */
     public OrderItem(Product pd, int quantity) {
-        this.pd = pd;
-        this.quantity = quantity;
+    	setProduct(pd);
+        setQuantity(quantity);
         this.price = this.pd.getPrice();
         this.subtotal = Arith.mul((double) this.quantity, this.price);
     }
@@ -49,10 +56,10 @@ public class OrderItem {
      * @param subtotal 小計
      */
     public OrderItem(int order_product_id, int order_id, int product_id, double price, int quantity, double subtotal) {
-        this.id = order_product_id;
-        this.quantity = quantity;
-        this.price = price;
-        this.subtotal = subtotal;
+        setId(order_product_id);
+        setQuantity(quantity);
+        setPrice(price);
+        setSubTotal(subtotal);
         getProductFromDB(product_id);
     }
 
@@ -60,10 +67,19 @@ public class OrderItem {
      * 從 DB 中取得產品
      */
     private void getProductFromDB(int product_id) {
-        String id = String.valueOf(product_id);
-        this.pd = ph.getById(id);
+        String product_index = String.valueOf(product_id);
+        this.pd = ph.getById(product_index);
     }
 
+    /**
+     * 取得產品
+     *
+     * @return Product 回傳產品
+     */
+    public void setProduct(Product pd) {
+        this.pd=pd;
+    }    
+    
     /**
      * 取得產品
      *
@@ -76,8 +92,8 @@ public class OrderItem {
     /**
      * 設定訂單細項編號
      */
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int product_index) {
+        this.product_index = product_index;
     }
 
     /**
@@ -86,8 +102,17 @@ public class OrderItem {
      * @return int 回傳訂單細項編號
      */
     public int getId() {
-        return this.id;
+        return this.product_index;
     }
+    
+    /**
+     * 取得產品價格
+     *
+     * @return double 回傳產品價格
+     */
+    public void setPrice(double price) {
+        this.price=price;
+    }    
 
     /**
      * 取得產品價格
@@ -103,10 +128,28 @@ public class OrderItem {
      *
      * @return double 回傳產品細項小計
      */
+    public void setSubTotal(double subtotal) {
+        this.subtotal=subtotal;
+    }    
+    
+    /**
+     * 取得產品細項小計
+     *
+     * @return double 回傳產品細項小計
+     */
     public double getSubTotal() {
         return this.subtotal;
     }
 
+    /**
+     * 取得產品數量
+     *
+     * @return int 回傳產品數量
+     */
+    public void setQuantity(int quantity) {
+        this.quantity=quantity;
+    }    
+    
     /**
      * 取得產品數量
      *
@@ -123,7 +166,7 @@ public class OrderItem {
      */
     public JSONObject getData() {
         JSONObject data = new JSONObject();
-        data.put("id", getId());
+        data.put("product_index", getId());
         data.put("product", getProduct().getData());
         data.put("price", getPrice());
         data.put("quantity", getQuantity());
