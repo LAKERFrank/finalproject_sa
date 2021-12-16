@@ -4,17 +4,13 @@ import org.json.JSONObject;
 import ncu.im3069.demo.util.Arith;
 
 public class OrderItem {
-<<<<<<< HEAD
 
-    /** id，產品細項編號 000000000000000000000000000000000888888888888888899999*/
+    /** id，產品細項編號 */
     private int id;
 
-=======
-//	00000000000000000000000000000000000000000000000000000000000000000000000000000000000
     /** product_index，產品細項編號 */
     private int product_index;
-    
->>>>>>> 8de94c5e9b2931e4204fb497c8541f11695244bd
+
     /** pd，產品 */
     private Product pd;
 
