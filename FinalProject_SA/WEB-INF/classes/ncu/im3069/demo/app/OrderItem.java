@@ -5,7 +5,7 @@ import ncu.im3069.demo.util.Arith;
 
 public class OrderItem {
 
-    /** id，產品細項編號 56*/
+    /** id，產品細項編號 frank*/
     private int id;
 
     /** product_index，產品細項編號 */
