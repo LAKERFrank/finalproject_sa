@@ -8,8 +8,8 @@ public class OrderItem {
     /** id，產品細項編號 frank*/
     private int id;
 
-    /** product_index，產品細項編號 */
-    private int product_index;
+    /** product_id，產品細項編號 */
+    private int product_id;
 
     /** pd，產品 */
     private Product pd;
@@ -63,8 +63,8 @@ public class OrderItem {
      * 從 DB 中取得產品
      */
     private void getProductFromDB(int product_id) {
-        String product_index = String.valueOf(product_id);
-        this.pd = ph.getById(product_index);
+        String product_id = String.valueOf(product_id);
+        this.pd = ph.getById(product_id);
     }
 
     /**
@@ -88,8 +88,8 @@ public class OrderItem {
     /**
      * 設定訂單細項編號
      */
-    public void setId(int product_index) {
-        this.product_index = product_index;
+    public void setId(int product_id) {
+        this.product_id = product_id;
     }
 
     /**
@@ -98,7 +98,7 @@ public class OrderItem {
      * @return int 回傳訂單細項編號
      */
     public int getId() {
-        return this.product_index;
+        return this.product_id;
     }
     
     /**
@@ -162,7 +162,7 @@ public class OrderItem {
      */
     public JSONObject getData() {
         JSONObject data = new JSONObject();
-        data.put("product_index", getId());
+        data.put("product_id", getId());
         data.put("product", getProduct().getData());
         data.put("price", getPrice());
         data.put("quantity", getQuantity());
