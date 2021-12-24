@@ -16,6 +16,8 @@ import java.util.Calendar;
  */
 
 public class Member {
+	
+	private int Frank;
     
     /** members_id，會員編號 */
     private int members_id;
