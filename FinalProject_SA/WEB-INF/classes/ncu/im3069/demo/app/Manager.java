@@ -15,9 +15,61 @@ import org.json.*;
 
 public class Manager {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
+	private int managers_id;
+	
+	private String name;
+	
+	private String email;
+	
+	private String password;
+	
+	private ManagerHelper mh = ManagerHelper.getHelper();
+	
+	public Manager(String email,String password, String name) {
+        setEmail(email);
+        setPassword(password);
+        setName(name);
 	}
+	
+	private void setID(int id) {
+		this.managers_id=id;
+	}
+	
+	public int getID() {
+		return this.managers_id;
+	}
+	
+    private void setEmail(String e) {
+    	this.email=e;
+    }
 
+    public String getEmail() {
+        return this.email;
+    }
+    
+    private void setName(String n) {
+    	this.name=n;
+    }
+    
+    public String getName() {
+        return this.name;
+    }
+    
+    private void setPassword(String psw) {
+    	this.password=psw;
+    }
+
+    public String getPassword() {
+        return this.password;
+    }    
+    
+    public JSONObject getData() {
+    	JSONObject jso=new JSONObject();
+        jso.put("members_id", getID());
+        jso.put("name", getName());
+        jso.put("email", getEmail());
+        jso.put("password", getPassword());
+        
+        return jso;    	
+    }
 }
