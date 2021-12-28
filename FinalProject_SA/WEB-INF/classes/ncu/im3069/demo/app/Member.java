@@ -16,8 +16,6 @@ import java.util.Calendar;
  */
 
 public class Member {
-	
-	private int Frank;
     
     /** members_id，會員編號 */
     private int members_id;
@@ -39,6 +37,7 @@ public class Member {
     
     /** status，會員之組別 */
     private int status;
+    
     
     /** mh，MemberHelper之物件與Member相關之資料庫方法（Sigleton） */
     private MemberHelper mh =  MemberHelper.getHelper();
