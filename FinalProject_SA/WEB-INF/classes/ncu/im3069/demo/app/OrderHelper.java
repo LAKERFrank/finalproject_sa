@@ -33,8 +33,9 @@ public class OrderHelper {
             /** 取得資料庫之連線 */
             conn = DBMgr.getConnection();
             /** SQL指令 */
-            String sql = "INSERT INTO `missa`.`orders`(`last_name`, `first_name`, `email`, `address`, `phone`, `create`, `modify`)"
-                    + " VALUES(?, ?, ?, ?, ?, ?, ?)";
+            String sql = "DECLARE bookPrice int"
+            		+ "	SELECT `price` into bookPrice FROM `products` where `products_id` = ? LIMIT 1"
+            		+ "	INSERT INTO `orders`(`members_id`,`modified`,`created`,`total_price`) VALUES (?,?,?,?)";
             
             /** 取得所需之參數 */
             String first_name = order.getFirstName();
@@ -104,7 +105,7 @@ public class OrderHelper {
             /** 取得資料庫之連線 */
             conn = DBMgr.getConnection();
             /** SQL指令 */
-            String sql = "SELECT * FROM `missa`.`orders`";
+            String sql = "SELECT * FROM `orders`";
             
             /** 將參數回填至SQL指令當中，若無則不用只需要執行 prepareStatement */
             pres = conn.prepareStatement(sql);
@@ -178,7 +179,7 @@ public class OrderHelper {
             /** 取得資料庫之連線 */
             conn = DBMgr.getConnection();
             /** SQL指令 */
-            String sql = "SELECT * FROM `missa`.`orders` WHERE `orders`.`id` = ?";
+            String sql = "SELECT * FROM `orders` WHERE `orders_id` = ?";
             
             /** 將參數回填至SQL指令當中，若無則不用只需要執行 prepareStatement */
             pres = conn.prepareStatement(sql);
