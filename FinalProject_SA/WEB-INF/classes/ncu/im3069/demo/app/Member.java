@@ -53,7 +53,7 @@ public class Member {
     public Member(String email, String password, String name) {
         setEmail(email);
         setPassword(password);
-        this.name = name;
+        setName(name);
         update();
     }
 
@@ -67,10 +67,10 @@ public class Member {
      * @param name 會員姓名
      */
     public Member(int members_id, String email, String password, String name) {
-        this.members_id = members_id;
-        this.email = email;
-        this.password = password;
-        this.name = name;
+    	setID(members_id);
+    	setEmail(email);
+    	setPassword(password);
+    	setName(name);
         /** 取回原有資料庫內該名會員之更新時間分鐘數與組別 */
         getLoginTimesStatus();
         /** 計算會員之組別 */
@@ -89,12 +89,12 @@ public class Member {
      * @param status the 會員之組別
      */
     public Member(int members_id, String email, String password, String name, int login_times, int status) {
-        this.members_id = members_id;
-        this.email = email;
-        this.password = password;
-        this.name = name;
-        this.login_times = login_times;
-        this.status = status;
+        setID(members_id);
+        setEmail(email);
+        setPassword(password);
+        setName(name);
+        setLoginTimes(login_times);
+        setStatus(status);
     }
     
     /**
