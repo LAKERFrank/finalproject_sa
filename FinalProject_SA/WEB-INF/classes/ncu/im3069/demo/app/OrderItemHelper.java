@@ -42,7 +42,7 @@ public class OrderItemHelper {
             int product_id = op.getProduct().getIndex();
             double price = op.getPrice();
             int quantity = op.getQuantity();
-            double subtotal = op.getSubTotal();
+            int subtotal = op.getSubTotal();
             
             try {
                 /** 取得資料庫之連線 */
@@ -119,7 +119,7 @@ public class OrderItemHelper {
                 int product_id = rs.getInt("product_id");
                 double price = rs.getDouble("price");
                 int quantity = rs.getInt("quantity");
-                double subtotal = rs.getDouble("subtotal");
+                int subtotal = rs.getInt("subtotal");
                 
                 /** 將每一筆會員資料產生一名新Member物件 */
                 op = new OrderItem(order_product_id, order_id, product_id, price, quantity, subtotal);

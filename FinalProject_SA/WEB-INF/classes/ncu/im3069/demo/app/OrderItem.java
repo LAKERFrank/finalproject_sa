@@ -21,7 +21,7 @@ public class OrderItem {
     private int price;
 
     /** subtotal，產品小計 */
-    private double subtotal;
+    private int subtotal;
 
     /** ph，ProductHelper 之物件與 OrderItem 相關之資料庫方法（Sigleton） */
     private ProductHelper ph =  ProductHelper.getHelper();
@@ -124,7 +124,7 @@ public class OrderItem {
      *
      * @return double 回傳產品細項小計
      */
-    public void setSubTotal(double subtotal) {
+    public void setSubTotal(int subtotal) {
         this.subtotal=subtotal;
     }    
     
@@ -133,7 +133,7 @@ public class OrderItem {
      *
      * @return double 回傳產品細項小計
      */
-    public double getSubTotal() {
+    public int getSubTotal() {
         return this.subtotal;
     }
 

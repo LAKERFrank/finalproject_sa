@@ -17,10 +17,10 @@ public class Arith {
     * @param v2 加數 
     * @return 兩個引數的和 
     */ 
-    public static double add(double v1,double v2){ 
+    public static int add(int v1,int v2){ 
         BigDecimal b1 = new BigDecimal(Double.toString(v1)); 
         BigDecimal b2 = new BigDecimal(Double.toString(v2));
-        return b1.add(b2).doubleValue(); 
+        return b1.add(b2).intValue(); 
     } 
     
     /** 
@@ -41,10 +41,10 @@ public class Arith {
     * @param v2 乘數 
     * @return 兩個引數的積 
     */ 
-    public static double mul(double v1,double v2){ 
+    public static int mul(int v1,int v2){ 
         BigDecimal b1 = new BigDecimal(Double.toString(v1)); 
         BigDecimal b2 = new BigDecimal(Double.toString(v2)); 
-        return b1.multiply(b2).doubleValue(); 
+        return b1.multiply(b2).intValue(); 
     } 
     /** 
     * 提供（相對）精確的除法運算，當發生除不盡的情況時，精確到 
