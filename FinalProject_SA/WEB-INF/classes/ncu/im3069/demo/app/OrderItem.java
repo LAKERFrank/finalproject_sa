@@ -9,7 +9,7 @@ public class OrderItem {
     private int id;
 
     /** product_id，產品細項編號 */
-    private int product_id;
+//    private int product_id;
 
     /** pd，產品 */
     private Product pd;
@@ -36,7 +36,7 @@ public class OrderItem {
     public OrderItem(Product pd, int quantity) {
     	setProduct(pd);
         setQuantity(quantity);
-        this.price = this.pd.getPrice();
+        setPrice(this.pd.getPrice());
         this.subtotal = Arith.mul((double) this.quantity, this.price);
     }
 
@@ -63,8 +63,8 @@ public class OrderItem {
      * 從 DB 中取得產品
      */
     private void getProductFromDB(int product_id) {
-        String product_id = String.valueOf(product_id);
-        this.pd = ph.getById(product_id);
+        String products_id = String.valueOf(product_id);
+        this.pd = ph.getById(products_id);
     }
 
     /**
@@ -88,8 +88,8 @@ public class OrderItem {
     /**
      * 設定訂單細項編號
      */
-    public void setId(int product_id) {
-        this.product_id = product_id;
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**
@@ -98,7 +98,7 @@ public class OrderItem {
      * @return int 回傳訂單細項編號
      */
     public int getId() {
-        return this.product_id;
+        return this.id;
     }
     
     /**

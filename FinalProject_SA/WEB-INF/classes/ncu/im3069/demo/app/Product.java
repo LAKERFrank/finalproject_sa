@@ -17,7 +17,7 @@ public class Product {
     private String image;
 
     /** description，產品描述 */
-	private String description;
+//	private String description;
 
     /**
      * 實例化（Instantiates）一個新的（new）Product 物件<br>
@@ -38,9 +38,9 @@ public class Product {
      * @param image 產品圖片
      */
 	public Product(String name, int price, String image) {
-		this.name = name;
-		this.price = price;
-		this.image = image;
+		setName(name);
+		setPrice(price);
+		setImage(image);
 	}
 
     /**
@@ -54,11 +54,11 @@ public class Product {
      * @param describe 產品敘述
      */
 	public Product(int index, String name, int price, String image, String description) {
-		this.index = index;
-		this.name = name;
-		this.price = price;
-		this.image = image;
-		this.description = description;
+		setIndex(index);
+		setName(name);
+		setPrice(price);
+		setImage(image);
+//		this.description = description;
 	}
 
     /**
@@ -138,18 +138,18 @@ public class Product {
      * 
      * 
      */
-    private void setDescription(String d) {
-    	this.description=d;
-    }
-    
-    /**
-     * 取得產品敘述
-     *
-     * @return String 回傳產品敘述
-     */
-	public String getDescription() {
-		return this.description;
-	}
+//    private void setDescription(String d) {
+//    	this.description=d;
+//    }
+//    
+//    /**
+//     * 取得產品敘述
+//     *
+//     * @return String 回傳產品敘述
+//     */
+//	public String getDescription() {
+//		return this.description;
+//	}
 
     /**
      * 取得產品資訊
@@ -163,7 +163,7 @@ public class Product {
         jso.put("name", getName());
         jso.put("price", getPrice());
         jso.put("image", getImage());
-        jso.put("description", getDescription());
+//        jso.put("description", getDescription());
 
         return jso;
     }
