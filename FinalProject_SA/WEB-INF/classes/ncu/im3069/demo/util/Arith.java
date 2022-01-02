@@ -1,5 +1,6 @@
 package ncu.im3069.demo.util;
 
+import java.lang.*;
 import java.math.BigDecimal; 
 /** 
 * 由於Java的簡單型別不能夠精確的對浮點數進行運算，這個工具類提供精 
@@ -18,8 +19,8 @@ public class Arith {
     * @return 兩個引數的和 
     */ 
     public static int add(int v1,int v2){ 
-        BigDecimal b1 = new BigDecimal(Double.toString(v1)); 
-        BigDecimal b2 = new BigDecimal(Double.toString(v2));
+        BigDecimal b1 = new BigDecimal(Integer.toString(v1)); 
+        BigDecimal b2 = new BigDecimal(Integer.toString(v2));
         return b1.add(b2).intValue(); 
     } 
     
@@ -29,10 +30,10 @@ public class Arith {
     * @param v2 減數 
     * @return 兩個引數的差 
     */ 
-    public static double sub(double v1,double v2) { 
-        BigDecimal b1 = new BigDecimal(Double.toString(v1)); 
-        BigDecimal b2 = new BigDecimal(Double.toString(v2)); 
-        return b1.subtract(b2).doubleValue(); 
+    public static int sub(int v1,int v2) { 
+        BigDecimal b1 = new BigDecimal(Integer.toString(v1)); 
+        BigDecimal b2 = new BigDecimal(Integer.toString(v2)); 
+        return b1.subtract(b2).intValue(); 
     } 
     
     /** 
@@ -42,8 +43,8 @@ public class Arith {
     * @return 兩個引數的積 
     */ 
     public static int mul(int v1,int v2){ 
-        BigDecimal b1 = new BigDecimal(Double.toString(v1)); 
-        BigDecimal b2 = new BigDecimal(Double.toString(v2)); 
+        BigDecimal b1 = new BigDecimal(Integer.toString(v1)); 
+        BigDecimal b2 = new BigDecimal(Integer.toString(v2)); 
         return b1.multiply(b2).intValue(); 
     } 
     /** 
@@ -53,8 +54,8 @@ public class Arith {
     * @param v2 除數 
     * @return 兩個引數的商 
     */ 
-    public static double div(double v1,double v2) { 
-        return div(v1,v2,DEF_DIV_SCALE); 
+    public static int div(int v1,int v2) { 
+        return (int) div(v1,v2,DEF_DIV_SCALE); 
     } 
     /** 
     * 提供（相對）精確的除法運算。當發生除不盡的情況時，由scale引數指 
@@ -64,16 +65,16 @@ public class Arith {
     * @param scale 表示表示需要精確到小數點以後幾位。 
     * @return 兩個引數的商 
     */ 
-    public static double div(double v1,double v2,int scale) { 
+    public static int div(int v1,int v2,int scale) { 
         if(scale<0){ 
             throw new IllegalArgumentException( 
             "The scale must be a positive integer or zero"); 
         } 
         
-        BigDecimal b1 = new BigDecimal(Double.toString(v1)); 
-        BigDecimal b2 = new BigDecimal(Double.toString(v2)); 
+        BigDecimal b1 = new BigDecimal(Integer.toString(v1)); 
+        BigDecimal b2 = new BigDecimal(Integer.toString(v2)); 
         
-        return b1.divide(b2,scale,BigDecimal.ROUND_HALF_UP).doubleValue(); 
+        return b1.divide(b2,scale,BigDecimal.ROUND_HALF_UP).intValue(); 
     } 
     /** 
     * 提供精確的小數位四捨五入處理。 
@@ -81,13 +82,13 @@ public class Arith {
     * @param scale 小數點後保留幾位 
     * @return 四捨五入後的結果 
     */ 
-    public static double round(double v,int scale){ 
+    public static int round(int v,int scale){ 
     if(scale<0){ 
     throw new IllegalArgumentException( 
     "The scale must be a positive integer or zero"); 
     } 
-    BigDecimal b = new BigDecimal(Double.toString(v)); 
+    BigDecimal b = new BigDecimal(Integer.toString(v)); 
     BigDecimal one = new BigDecimal("1"); 
-    return b.divide(one,scale,BigDecimal.ROUND_HALF_UP).doubleValue(); 
+    return b.divide(one,scale,BigDecimal.ROUND_HALF_UP).intValue(); 
     } 
 }; 
