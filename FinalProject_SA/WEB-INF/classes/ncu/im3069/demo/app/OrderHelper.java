@@ -123,8 +123,9 @@ public class OrderHelper {
                 
                 /** 將 ResultSet 之資料取出 */
                 int id = rs.getInt("id");
-                String first_name = rs.getString("first_name");
-                String last_name = rs.getString("last_name");
+                String name = rs.getString("name");
+//                String first_name = rs.getString("first_name");
+//                String last_name = rs.getString("last_name");
                 String email = rs.getString("email");
                 String address = rs.getString("address");
                 String phone = rs.getString("phone");
@@ -132,7 +133,7 @@ public class OrderHelper {
                 Timestamp modify = rs.getTimestamp("modify");
                 
                 /** 將每一筆商品資料產生一名新Product物件 */
-                o = new Order(id, first_name, last_name, email, address, phone, create, modify);
+                o = new Order(id, name, phone, create, modify);
                 /** 取出該項商品之資料並封裝至 JSONsonArray 內 */
                 jsa.put(o.getOrderAllInfo());
             }
@@ -198,8 +199,9 @@ public class OrderHelper {
                 
                 /** 將 ResultSet 之資料取出 */
                 int id = rs.getInt("id");
-                String first_name = rs.getString("first_name");
-                String last_name = rs.getString("last_name");
+//                String first_name = rs.getString("first_name");
+//                String last_name = rs.getString("last_name");
+                String name = rs.getString("name");
                 String email = rs.getString("email");
                 String address = rs.getString("address");
                 String phone = rs.getString("phone");
@@ -207,7 +209,7 @@ public class OrderHelper {
                 Timestamp modify = rs.getTimestamp("modify");
                 
                 /** 將每一筆商品資料產生一名新Product物件 */
-                o = new Order(id, first_name, last_name, email, address, phone, create, modify);
+                o = new Order(id, name, phone, create, modify);
                 /** 取出該項商品之資料並封裝至 JSONsonArray 內 */
                 data = o.getOrderAllInfo();
             }
