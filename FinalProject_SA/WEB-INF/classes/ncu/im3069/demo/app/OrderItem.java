@@ -72,7 +72,7 @@ public class OrderItem {
      *
      * @return Product 回傳產品
      */
-    public void setProduct(Product pd) {
+    private void setProduct(Product pd) {
         this.pd=pd;
     }    
     
@@ -88,7 +88,7 @@ public class OrderItem {
     /**
      * 設定訂單細項編號
      */
-    public void setId(int id) {
+    private void setId(int id) {
         this.id = id;
     }
 
@@ -106,7 +106,7 @@ public class OrderItem {
      *
      * @return double 回傳產品價格
      */
-    public void setPrice(int price) {
+    private void setPrice(int price) {
         this.price=price;
     }    
 
@@ -124,7 +124,7 @@ public class OrderItem {
      *
      * @return double 回傳產品細項小計
      */
-    public void setSubTotal(int subtotal) {
+    private void setSubTotal(int subtotal) {
         this.subtotal=subtotal;
     }    
     
@@ -142,7 +142,7 @@ public class OrderItem {
      *
      * @return int 回傳產品數量
      */
-    public void setQuantity(int quantity) {
+    private void setQuantity(int quantity) {
         this.quantity=quantity;
     }    
     

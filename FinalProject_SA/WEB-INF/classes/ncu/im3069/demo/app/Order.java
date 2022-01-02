@@ -104,7 +104,7 @@ public class Order {
     /**
      * 設定訂單編號
      */
-    public void setID(int id) {
+    private void setID(int id) {
         this.id = id;
     }
 
@@ -117,7 +117,7 @@ public class Order {
         return this.id;
     }
     
-    public void setName(String name) {
+    private void setName(String name) {
     	this.name=name;
     }
 
@@ -148,7 +148,7 @@ public class Order {
 //        return this.email;
 //    }
 
-    public void setCreateTime(Timestamp create) {
+    private void setCreateTime(Timestamp create) {
     	this.create=create;
     }
     
@@ -161,7 +161,7 @@ public class Order {
         return this.create;
     }
 
-    public void setModifyTime(Timestamp modify) {
+    private void setModifyTime(Timestamp modify) {
     	this.modify=modify;
     }
     
@@ -183,7 +183,7 @@ public class Order {
 //        return this.address;
 //    }
 
-    public void setPhone(String phone) {
+    private void setPhone(String phone) {
     	this.phone=phone;
     }
     
@@ -196,7 +196,7 @@ public class Order {
         return this.phone;
     }
     
-    public void setTotal_Price(int total_price) {
+    private void setTotal_Price(int total_price) {
     	this.total_price=total_price;
     }
 
