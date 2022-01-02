@@ -37,7 +37,7 @@ public class OrderItem {
     	setProduct(pd);
         setQuantity(quantity);
         setPrice(this.pd.getPrice());
-        this.subtotal = Arith.mul((double) this.quantity, this.price);
+        setSubTotal(Arith.mul((int) this.quantity, this.price));
     }
 
     /**
@@ -51,7 +51,7 @@ public class OrderItem {
      * @param quantity 產品數量
      * @param subtotal 小計
      */
-    public OrderItem(int order_product_id, int order_id, int product_id, int price, int quantity, double subtotal) {
+    public OrderItem(int order_product_id, int order_id, int product_id, int price, int quantity, int subtotal) {
         setId(order_product_id);
         setQuantity(quantity);
         setPrice(price);
@@ -115,7 +115,7 @@ public class OrderItem {
      *
      * @return double 回傳產品價格
      */
-    public double getPrice() {
+    public int getPrice() {
         return this.price;
     }
 
