@@ -126,8 +126,8 @@ public class OrderHelper {
                 String name = rs.getString("name");
 //                String first_name = rs.getString("first_name");
 //                String last_name = rs.getString("last_name");
-                String email = rs.getString("email");
-                String address = rs.getString("address");
+//                String email = rs.getString("email");
+//                String address = rs.getString("address");
                 String phone = rs.getString("phone");
                 Timestamp create = rs.getTimestamp("create");
                 Timestamp modify = rs.getTimestamp("modify");
@@ -202,8 +202,8 @@ public class OrderHelper {
 //                String first_name = rs.getString("first_name");
 //                String last_name = rs.getString("last_name");
                 String name = rs.getString("name");
-                String email = rs.getString("email");
-                String address = rs.getString("address");
+//                String email = rs.getString("email");
+//                String address = rs.getString("address");
                 String phone = rs.getString("phone");
                 Timestamp create = rs.getTimestamp("create");
                 Timestamp modify = rs.getTimestamp("modify");
