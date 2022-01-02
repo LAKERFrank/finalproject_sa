@@ -11,17 +11,19 @@ public class Order {
     /** id，訂單編號 */
     private int id;
 
+    private int members_id;
+    
     /** first_name，會員姓名 */
-    private String first_name;
+    private String name;
 
     /** last_name，會員姓 */
-    private String last_name;
+//    private String last_name;
 
     /** email，會員電子郵件信箱 */
-    private String email;
+//    private String email;
 
     /** address，會員地址 */
-    private String address;
+//    private String address;
 
     /** phone，會員手機 */
     private String phone;
@@ -34,6 +36,8 @@ public class Order {
 
     /** modify，訂單修改時間 */
     private Timestamp modify;
+    
+    private int total_price=0;
 
     /** oph，OrderItemHelper 之物件與 Order 相關之資料庫方法（Sigleton） */
     private OrderItemHelper oph = OrderItemHelper.getHelper();
@@ -48,14 +52,15 @@ public class Order {
      * @param address 會員地址
      * @param phone 會員姓名
      */
-    public Order(String first_name, String last_name, String email, String address, String phone) {
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.email = email;
-        this.address = address;
-        this.phone = phone;
-        this.create = Timestamp.valueOf(LocalDateTime.now());
-        this.modify = Timestamp.valueOf(LocalDateTime.now());
+    public Order(String name, String phone) {
+    	setName(name);
+//        this.first_name = first_name;
+//        this.last_name = last_name;
+//        this.email = email;
+//        this.address = address;
+        setPhone(phone);
+        setCreateTime(Timestamp.valueOf(LocalDateTime.now()));
+        setModifyTime(Timestamp.valueOf(LocalDateTime.now()));
     }
 
     /**
@@ -70,15 +75,15 @@ public class Order {
      * @param create 訂單創建時間
      * @param modify 訂單修改時間
      */
-    public Order(int id, String first_name, String last_name, String email, String address, String phone, Timestamp create, Timestamp modify) {
-        this.id = id;
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.email = email;
-        this.address = address;
-        this.phone = phone;
-        this.create = create;
-        this.modify = modify;
+    public Order(int id, String name, String phone, Timestamp create, Timestamp modify) {
+    	setID(id);
+        setName(name);
+//        this.last_name = last_name;
+//        this.email = email;
+//        this.address = address;
+        setPhone(phone);
+        setCreateTime(create);
+        setModifyTime(modify);
         getOrderProductFromDB();
     }
 
@@ -99,7 +104,7 @@ public class Order {
     /**
      * 設定訂單編號
      */
-    public void setId(int id) {
+    public void setID(int id) {
         this.id = id;
     }
 
@@ -108,8 +113,12 @@ public class Order {
      *
      * @return int 回傳訂單編號
      */
-    public int getId() {
+    public int getID() {
         return this.id;
+    }
+    
+    public void setName(String name) {
+    	this.name=name;
     }
 
     /**
@@ -117,8 +126,8 @@ public class Order {
      *
      * @return String 回傳訂單會員的名
      */
-    public String getFirstName() {
-        return this.first_name;
+    public String getName() {
+        return this.name;
     }
 
     /**
@@ -126,19 +135,23 @@ public class Order {
      *
      * @return String 回傳訂單會員的姓
      */
-    public String getLastName() {
-        return this.last_name;
-    }
+//    public String getLastName() {
+//        return this.last_name;
+//    }
 
     /**
      * 取得訂單信箱
      *
      * @return String 回傳訂單信箱
      */
-    public String getEmail() {
-        return this.email;
-    }
+//    public String getEmail() {
+//        return this.email;
+//    }
 
+    public void setCreateTime(Timestamp create) {
+    	this.create=create;
+    }
+    
     /**
      * 取得訂單創建時間
      *
@@ -148,6 +161,10 @@ public class Order {
         return this.create;
     }
 
+    public void setModifyTime(Timestamp modify) {
+    	this.modify=modify;
+    }
+    
     /**
      * 取得訂單修改時間
      *
@@ -162,10 +179,14 @@ public class Order {
      *
      * @return String 回傳訂單地址
      */
-    public String getAddress() {
-        return this.address;
-    }
+//    public String getAddress() {
+//        return this.address;
+//    }
 
+    public void setPhone(String phone) {
+    	this.phone=phone;
+    }
+    
     /**
      * 取得訂單電話
      *
@@ -174,7 +195,15 @@ public class Order {
     public String getPhone() {
         return this.phone;
     }
+    
+    public void setTotal_Price(int total_price) {
+    	this.total_price=total_price;
+    }
 
+    public int getTotal_Price() {
+    	return this.total_price;
+    }
+    
     /**
      * 取得該名會員所有資料
      *
@@ -199,11 +228,12 @@ public class Order {
      */
     public JSONObject getOrderData() {
         JSONObject jso = new JSONObject();
-        jso.put("id", getId());
-        jso.put("first_name", getFirstName());
-        jso.put("last_name", getLastName());
-        jso.put("email", getEmail());
-        jso.put("address", getAddress());
+        jso.put("id", getID());
+//        jso.put("first_name", getFirstName());
+//        jso.put("last_name", getLastName());
+        jso.put("name", getName());
+//        jso.put("email", getEmail());
+//        jso.put("address", getAddress());
         jso.put("phone", getPhone());
         jso.put("create", getCreateTime());
         jso.put("modify", getModifyTime());

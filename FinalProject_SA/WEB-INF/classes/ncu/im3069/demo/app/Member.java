@@ -53,7 +53,7 @@ public class Member {
     public Member(String email, String password, String name) {
         setEmail(email);
         setPassword(password);
-        this.name = name;
+        setName(name);
         update();
     }
 
@@ -67,10 +67,10 @@ public class Member {
      * @param name 會員姓名
      */
     public Member(int members_id, String email, String password, String name) {
-        this.members_id = members_id;
-        this.email = email;
-        this.password = password;
-        this.name = name;
+    	setID(members_id);
+    	setEmail(email);
+    	setPassword(password);
+    	setName(name);
         /** 取回原有資料庫內該名會員之更新時間分鐘數與組別 */
         getLoginTimesStatus();
         /** 計算會員之組別 */
@@ -89,12 +89,12 @@ public class Member {
      * @param status the 會員之組別
      */
     public Member(int members_id, String email, String password, String name, int login_times, int status) {
-        this.members_id = members_id;
-        this.email = email;
-        this.password = password;
-        this.name = name;
-        this.login_times = login_times;
-        this.status = status;
+        setID(members_id);
+        setEmail(email);
+        setPassword(password);
+        setName(name);
+        setLoginTimes(login_times);
+        setStatus(status);
     }
     
     /**
@@ -252,24 +252,24 @@ public class Member {
      * 取得資料庫內之更新資料時間分鐘數與會員組別
      *
      */
-    private void getLoginTimesStatus() {
-        /** 透過MemberHelper物件，取得儲存於資料庫的更新時間分鐘數與會員組別 */
-        JSONObject data = mh.getLoginTimesStatus(this);
-        /** 將資料庫所儲存該名會員之相關資料指派至Member物件之屬性 */
-        this.login_times = data.getInt("login_times");
-        this.status = data.getString("status");
-    }
+//    private void getLoginTimesStatus() {
+//        /** 透過MemberHelper物件，取得儲存於資料庫的更新時間分鐘數與會員組別 */
+//        JSONObject data = mh.getLoginTimesStatus(this);
+//        /** 將資料庫所儲存該名會員之相關資料指派至Member物件之屬性 */
+//        this.login_times = data.getInt("login_times");
+//        this.status = data.getString("status");
+//    }
     
     /**
      * 計算會員之組別<br>
      * 若為偶數則為「偶數會員」，若為奇數則為「奇數會員」
      */
-    private void calcAccName() {
-        /** 計算目前分鐘數為偶數或奇數 */
-        String curr_status = (this.login_times % 2 == 0) ? "偶數會員" : "奇數會員";
-        /** 將新的會員組別指派至Member之屬性 */
-        this.status = curr_status;
-        /** 檢查該名會員是否已經在資料庫，若有則透過MemberHelper物件，更新目前之組別狀態 */
-        if(this.members_id != 0) mh.updateStatus(this, curr_status);
-    }
+//    private void calcAccName() {
+//        /** 計算目前分鐘數為偶數或奇數 */
+//        String curr_status = (this.login_times % 2 == 0) ? "偶數會員" : "奇數會員";
+//        /** 將新的會員組別指派至Member之屬性 */
+//        this.status = curr_status;
+//        /** 檢查該名會員是否已經在資料庫，若有則透過MemberHelper物件，更新目前之組別狀態 */
+//        if(this.members_id != 0) mh.updateStatus(this, curr_status);
+//    }
 }
