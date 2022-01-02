@@ -72,9 +72,9 @@ public class Member {
     	setPassword(password);
     	setName(name);
         /** 取回原有資料庫內該名會員之更新時間分鐘數與組別 */
-        getLoginTimesStatus();
+//        getLoginTimesStatus();
         /** 計算會員之組別 */
-        calcAccName();
+//        calcAccName();
     }
     
     /**
@@ -217,7 +217,7 @@ public class Member {
         Calendar calendar = Calendar.getInstance();
         this.login_times = calendar.get(Calendar.MINUTE);
         /** 計算帳戶所屬之組別 */
-        calcAccName();
+//        calcAccName();
         
         /** 檢查該名會員是否已經在資料庫 */
         if(this.members_id != 0) {
