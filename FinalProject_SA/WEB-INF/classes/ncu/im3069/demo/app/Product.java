@@ -111,7 +111,7 @@ public class Product {
      *
      * @return double 回傳產品價格
      */
-	public double getPrice() {
+	public int getPrice() {
 		return this.price;
 	}
 
