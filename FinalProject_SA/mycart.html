@@ -69,22 +69,31 @@
 <!-- 結帳跟付款方式的bar-->
     <div style="height: 40px;display:flex; flex-flow: row; justify-content: center; align-items: center; background-color: #7fcac3;">
 
-        <div class = "mycartdivchange">
-            <a class = "mycartachange" href="#">①書籍結帳</a>            
+        <div class = "mycartdiv" style="background-color:#d2f1ee">
+            <p class = "mycartp" style="color:#00796b" href="#">①書籍結帳</p>            
         </div>
 
-        <div class = "mycartdivchange">
-            <a class = "mycartachange" href="#">②付款方式</a>            
+        <div class = "mycartdiv">
+            <p class = "mycartp" href="#">②付款方式</p>            
         </div>
 
     </div>
+
+   <!-- 全選--> 
+    <script type="text/javascript">
+        function check_all(obj,cName)
+        {
+            var checkboxs = document.getElementsByName(cName);
+            for(var i=0;i<checkboxs.length;i++){checkboxs[i].checked = obj.checked;}
+        }
+        </script>
 <!-- 商品明細ㄉbar-->
     <div style=" padding-top: 25px; padding-bottom: 25px; display:flex; flex-flow: row; justify-content: center; align-items: center;">
     
         <div class="border-top" style="border-radius:5px; display:inline-flex; flex-flow: row; background-color: #7fcac3;">
             <div style="display: inline-flex;  align-items: center;">
                 <p style=" display:inline-block ; align-items: center; margin-top: 24px;padding-left: 10px;">
-                    <input type="checkbox" id="checkall" style="width: 20px; height: 20px;">
+                    <input type="checkbox" id="checkall" style="width: 20px; height: 20px;" onclick="check_all(this,'check')">
                 </p>
                 <strong><span style="color: #00796b; padding-left: 25px ;padding-right: 25px;">|</span></strong>
                 <strong><span style="color: #00796b; padding-left: 25px ;padding-right: 175px;">商品明細</span></strong>
@@ -106,7 +115,7 @@
             <div style="display: inline-flex;  align-items: center;">
                 
                 <p style=" display:inline-block ; align-items: center; margin-top: 24px;padding-left: 10px;">
-                    <input type="checkbox" id="checkall" style="width: 20px; height: 20px;">
+                    <input type="checkbox" name="check" style="width: 20px; height: 20px;">
                 </p>
 
             </div>
@@ -123,8 +132,8 @@
                     <strong><p style="padding-top: 25px; text-align: center;"><span style="color: red;">432</span>元</p></strong>
                 </div>
 
-                <div style=" padding-right: 57px; display:flex; flex-flow: row; justify-content: center; align-items: center;">
-                    <strong><p style="padding-left: 60px; padding-top: 25px; text-align: center;"><span style="color: red;">1</span></p></strong>
+                <div style="padding-left: 50px; padding-right: 57px; display:flex; flex-flow: row; justify-content: center; align-items: center;">
+                    <input type="text" style="height: 40px; width: 20px; text-align: center;">
                 </div>
 
                 <div style=" padding-right: 57px; display:flex; flex-flow: row; justify-content: center; align-items: center;">
@@ -142,7 +151,7 @@
             <div style="display: inline-flex;  align-items: center;">
                 
                 <p style=" display:inline-block ; align-items: center; margin-top: 24px;padding-left: 10px;">
-                    <input type="checkbox" id="checkall" style="width: 20px; height: 20px;">
+                    <input type="checkbox" name="check" style="width: 20px; height: 20px;">
                 </p>
 
             </div>
@@ -159,8 +168,8 @@
                     <strong><p style="padding-top: 25px; text-align: center;"><span style="color: red;">432</span>元</p></strong>
                 </div>
 
-                <div style=" padding-right: 57px; display:flex; flex-flow: row; justify-content: center; align-items: center;">
-                    <strong><p style="padding-left: 60px; padding-top: 25px; text-align: center;"><span style="color: red;">1</span></p></strong>
+                <div style="padding-left: 50px; padding-right: 57px; display:flex; flex-flow: row; justify-content: center; align-items: center;">
+                    <input type="text" style="height: 40px; width: 20px; text-align: center;">
                 </div>
 
                 <div style=" padding-right: 57px; display:flex; flex-flow: row; justify-content: center; align-items: center;">
@@ -186,7 +195,7 @@
         <div style="border-radius:5px; height: 40px; width: 780px; display:inline-flex; justify-content:flex-end; align-items: center;  background-color: #7fcac3;">
             <strong><p style="padding-right: 30px; display:inline-block;margin-top: 18px; text-align: center; color:#00796b;">共  <span style="color: red;">2</span> 項產品</p></strong>
             <strong><p style="display:inline-block;margin-top: 18px; text-align: center; color: #00796b;">|</p></strong>
-            <strong><p style="padding-left: 30px; padding-right: 10px; display:inline-block;margin-top: 18px; text-align: center; color: #00796b;">總金額 NT$ <span style="color: red;">864</span> 元</p></strong>
+            <strong><p style="padding-left: 30px; padding-right: 10px; display:inline-block;margin-top: 18px; text-align: center; color: #00796b;">總金額 NT$ <span style="color: red;">924</span> 元</p></strong>
 
         </div>
 
@@ -198,7 +207,7 @@
             <input type="button"  value="選擇付款方式" style=" border:none; font-weight: bolder; color: white; background-color:#00796b; border-radius:5px; height: 50px; width: 200px; text-align: center; ">
         </div>
 
-</div>
+    </div>
 </body>
 
 </html>
