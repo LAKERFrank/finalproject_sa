@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Bootstrap core CSS -->
+        <link href="statics/css/bootstrap.min.css" rel="stylesheet">
+        <link href="statics/css/font-awesome.min.css" rel="stylesheet">
+        <link href="statics/icon/favicon.ico" type="image/x-icon" rel="icon">
+        <link href="statics/icon/favicon.ico" type="image/x-icon" rel="shortcut icon">
+        <link href="statics/css/search.css" rel="stylesheet">
+        <link href="statics/css/categories.css" rel="stylesheet">
+        <link href="statics/css/result.css" rel="stylesheet">
+
+
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Jekyll v3.8.5">
+        <!-- rwd -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            }
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+                    
+                }
+            }
+        </style>
+
+        <!-- Custom styles for this template -->
+        <link href="statics/css/product.css" rel="stylesheet">
+        <link href="statics/css/jquery-confirm.css" rel="stylesheet">
+
+        <script src="statics/js/jquery-3.4.1.min.js"></script>
+        <script src="statics/js/jquery-confirm.js"></script>
+        
+        
+<!--自寫css(分區)-->
+        <link rel="stylesheet" href="statics/css/div.css">
+    </head>
+    <title> 搜尋 | 有購書鬍線上書城</title>
+</head>
+
+<!-- 書城的bar-->
+<body style="background-color:#d2f1ee; overflow: visible;">
+
+    <div class="top d-flex flex-column flex-md-row align-items-center border-bottom shadow-sm" >
+
+        <div class="mr-auto p-1"><a href="#" title="首頁"><img src="pic/YOGOBOOKSTORE.png" alt="" width="15%"></a></div>
+                
+        <div class="d-flex flex-row">
+            
+            <a href="#" title="購物車"><img src="pic/cart.png" alt="" width="35" height="35" style="margin-right:6px"></a>
+            <a class="p-2" href="product.html" style="color:#00796b; font-size:13px; text-decoration:none;"><nobr><strong>登入</strong></nobr></a>
+
+            <a class="p-2" href="product.html" style="color:#d2f1ee; font-size:13px; text-decoration:none;"><nobr><strong>加入會員</strong></nobr></a>
+            
+            <a class="p-2" href="order.html" style="color:#d2f1ee; font-size:13px; text-decoration:none;"><nobr><strong>會員專區</strong></nobr></a>
+                    
+        </div> 
+    </div>
+
+    <div id="searchbox">
+        <div id="search">
+            <input class="search-bar" type="search" name="search" placeholder="  輸入想搜尋的書籍、作者名稱、出版社…">
+            <button id="searchbutton"type="submit"><strong>🔍</strong></button>
+            <h1 id="recommend">
+                推薦關鍵字 : 
+                <a href="#" class="recommendposition" style="color:#00796b">Python</a>
+                <a href="#" class="recommendposition" style="color:#00796b">Java</a>
+                <a href="#" class="recommendposition" style="color:#00796b">系統分析</a>
+            </h1>
+        </div>
+    </div>
+
+    <div id="searchresultbox">
+        <h1 id="searchresult">
+            >搜尋結果<span id="interestedin">你可能也對以下也有興趣...</span>
+            <a href="#" id="python1">python 入門</a>
+            <span id="line">|</span>
+            <a href="#" id="python2345">精通python</a>
+            <span id="line">|</span>
+            <a href="#" id="python2345">python 股票</a>
+            <span id="line">|</span>
+            <a href="#" id="python2345">python excel</a>
+            <span id="line">|</span>
+            <a href="#" id="python2345">機器學習</a>
+        </h1>
+    </div>
+
+    <div id="categorybox">
+        <div id="categorychinesebox">
+            <h1 id="categorychinese">分類</h1>
+        </div>
+        <div id="checkboxbox">
+            <form name="form1">
+                <input id="checkbox1" type="checkbox" name="c1" value="1" onclick="return chk(this);"> <label for="checkbox1">所有商品</label>
+                <input id="checkbox234" type="checkbox" name="c1" value="2" onclick="return chk(this);"> <label for="checkbox234">實體書籍</label>
+                <input id="checkbox234" type="checkbox" name="c1" value="3" onclick="return chk(this);"> <label for="checkbox234">電子書籍</label>
+                <input id="checkbox234" type="checkbox" name="c1" value="4" onclick="return chk(this);"> <label for="checkbox234">有聲書籍</label>    
+            </form>
+        </div>
+    </div>
+
+    <div id="searchingresultbox">
+        <h1 id="searchingresult">
+            搜尋結果 共 <span id="much">5567</span>
+            <span id="pen">筆</span>
+            <span id="line">|</span>
+            <span id="page">頁數</span>
+            <span id="tlpage">1/237</span>
+        </h1>
+    </div>
+
+    <div id="resultbox">
+        <div id="resultborder">
+            <div id="resultpicbox">
+                <img id="pic1"src="pic/資料科學.jpg" alt="python資料科學">
+            </div>
+            <div id="introbox">
+                <h1 id="intro13">資料科學的統計實務 : 探索資料本質、扎實解讀數據、才是機器學習建模的第一步</h1>
+                <h1 id="intro2">作者 : 江崎貴裕<span id="intro2line">| </span> 出版社 : 旗標<span id="intro2line">| </span>出版日期 : 2021-11-01</h1>
+                <h1 id="intro13">優惠價 : <span style="color:#f54337; font-weight: 900;">473</span> 元</h1>
+            </div>
+            <div id="addcartcontainer">
+                <div id="addcartbuttondiv">
+                    <button id="addcartbutton"type="submit">
+                        <span>放入購物車</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="resultborder">
+            <div id="resultpicbox">
+                <img id="pic1"src="pic/python 自學聖經.jpg" alt="python 自學聖經">
+            </div>
+            <div id="introbox">
+                <h1 id="intro13">Python自學聖經(第二版) : 從程式素人到開發強者的技術與實戰大全(附影音/範例程式)</h1>
+                <h1 id="intro2">作者 : 文淵閣工作室<span id="intro2line">| </span> 出版社 : 碁峰<span id="intro2line">| </span>出版日期 : 2021-05-31</h1>
+                <h1 id="intro13">優惠價 : <span style="color:#f54337; font-weight: 900;">695</span> 元</h1>
+            </div>
+            <div id="addcartcontainer">
+                <div id="addcartbuttondiv">
+                    <button id="addcartbutton"type="submit">
+                        <span>放入購物車</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="resultborder">
+            <div id="resultpicbox">
+                <img id="pic1"src="pic/精通python.jpg" alt="精通python">
+            </div>
+            <div id="introbox">
+                <h1 id="intro13">精通 Python : 運用簡單的套件進行現代運算(第二版)</h1>
+                <h1 id="intro2">作者 : Bill Lubanovic<span id="intro2line">| </span> 出版社 : 歐萊禮<span id="intro2line">| </span>出版日期 : 2020-06-02</h1>
+                <h1 id="intro13">優惠價 : <span style="color:#f54337; font-weight: 900;">695</span> 元</h1>
+            </div>
+            <div id="addcartcontainer">
+                <div id="addcartbuttondiv">
+                    <button id="addcartbutton"type="submit">
+                        <span>放入購物車</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="resultborder">
+            <div id="resultpicbox">
+                <img id="pic1"src="pic/python 自動化.jpg" alt="python 自動化">
+            </div>
+            <div id="introbox">
+                <h1 id="intro13">Python 自動化的樂趣 : 搞定重複瑣碎&單調無聊的工作(第二版)</h1>
+                <h1 id="intro2">作者 : Al Sweigart<span id="intro2line">| </span> 出版社 : 碁峰<span id="intro2line">| </span>出版日期 : 2020-08-28</h1>
+                <h1 id="intro13">優惠價 : <span style="color:#f54337; font-weight: 900;">537</span> 元</h1>
+            </div>
+            <div id="addcartcontainer">
+                <div id="addcartbuttondiv">
+                    <button id="addcartbutton"type="submit">
+                        <span>放入購物車</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script>
+    function chk(input)
+    {
+    for(var i=0;i<document.form1.c1.length;i++)
+    {
+        document.form1.c1[i].checked = false;
+    }
+    
+    input.checked = true;
+    return true;
+    }
+</script>
+</html>
