@@ -4,18 +4,33 @@ import org.json.*;
 
 public class Product {
 	
-    /** index，產品編號 */
+    /** index，書籍編號 */
     private int index;
 
-    /** name，產品名稱 */
+    /** name，書籍名稱 */
     private String name;
 
-    /** price，產品價格 */
+    /** author，書籍作者 */
+    private String author;
+
+    /** publisher，書籍出版商 */
+    private String publisher;
+    
+    /** publish_date，書籍出版時間 */
+    private java.sql.Timestamp publish_date;
+    
+    /** price，書籍價格 */
     private int price;
 
-    /** image，產品圖片 */
+    /** image，書籍圖片 */
     private String image;
 
+    /** stock，書籍庫存 */
+    private int stock;
+
+    /** genre，書籍類別 */
+    private String genre;
+    
     /** description，產品描述 */
 //	private String description;
 
@@ -98,6 +113,60 @@ public class Product {
 	}
 
     /**
+     * 設定author
+     * 
+     * 
+     */
+    private void setAuthor(String a) {
+    	this.author=a;
+    }
+    
+    /**
+     * 取得書籍作者
+     *
+     * @return String 回傳書籍作者
+     */
+	public String getAuthor() {
+		return this.author;
+	}
+
+    /**
+     * 設定publisher
+     * 
+     * 
+     */
+    private void setPublisher(String p) {
+    	this.publisher=p;
+    }
+    
+    /**
+     * 取得書籍出版商
+     *
+     * @return String 回傳書籍出版商
+     */
+	public String getPublisher() {
+		return this.publisher;
+	}
+
+    /**
+     * 設定publish_date
+     * 
+     * 
+     */
+    private void setPublish_date(java.sql.Timestamp d) {
+    	this.publish_date=d;
+    }
+    
+    /**
+     * 取得書籍出版日期
+     *
+     * @return String 回傳書籍出版日期
+     */
+	public java.sql.Timestamp getPublish_date() {
+		return this.publish_date;
+	}
+
+    /**
      * 設定Price
      * 
      * 
@@ -131,6 +200,42 @@ public class Product {
      */
 	public String getImage() {
 		return this.image;
+	}
+
+    /**
+     * 設定stock
+     * 
+     * 
+     */
+    private void setStock(int s) {
+    	this.stock=s;
+    }
+    
+    /**
+     * 取得書籍庫存
+     *
+     * @return String 回傳書籍庫存
+     */
+	public int getStock() {
+		return this.stock;
+	}
+
+    /**
+     * 設定genre
+     * 
+     * 
+     */
+    private void setGenre(String g) {
+    	this.genre=g;
+    }
+    
+    /**
+     * 取得書籍類別
+     *
+     * @return String 回傳書籍類別
+     */
+	public String getGenre() {
+		return this.genre;
 	}
 
     /**

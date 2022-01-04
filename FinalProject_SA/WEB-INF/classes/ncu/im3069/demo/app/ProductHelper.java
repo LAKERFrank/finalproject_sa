@@ -41,7 +41,7 @@ public class ProductHelper {
             /** 取得資料庫之連線 */
             conn = DBMgr.getConnection();
             /** SQL指令 */
-            String sql = "SELECT * FROM `missa`.`products`";
+            String sql = "SELECT * FROM `products`";
             
             /** 將參數回填至SQL指令當中，若無則不用只需要執行 prepareStatement */
             pres = conn.prepareStatement(sql);
@@ -115,7 +115,7 @@ public class ProductHelper {
           conn = DBMgr.getConnection();
           String[] in_para = DBMgr.stringToArray(data, ",");
           /** SQL指令 */
-          String sql = "SELECT * FROM `missa`.`products` WHERE `products`.`id`";
+          String sql = "SELECT * FROM `products` WHERE `products_id`";
           for (int i=0 ; i < in_para.length ; i++) {
               sql += (i == 0) ? "in (?" : ", ?";
               sql += (i == in_para.length-1) ? ")" : "";
@@ -189,7 +189,7 @@ public class ProductHelper {
             /** 取得資料庫之連線 */
             conn = DBMgr.getConnection();
             /** SQL指令 */
-            String sql = "SELECT * FROM `missa`.`products` WHERE `products`.`id` = ? LIMIT 1";
+            String sql = "SELECT * FROM `products` WHERE `products_id` = ? LIMIT 1";
             
             /** 將參數回填至SQL指令當中，若無則不用只需要執行 prepareStatement */
             pres = conn.prepareStatement(sql);

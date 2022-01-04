@@ -40,7 +40,7 @@ public class OrderItemHelper {
             
             /** 取得所需之參數 */
             int product_id = op.getProduct().getIndex();
-            double price = op.getPrice();
+            int price = op.getPrice();
             int quantity = op.getQuantity();
             int subtotal = op.getSubTotal();
             
@@ -48,16 +48,16 @@ public class OrderItemHelper {
                 /** 取得資料庫之連線 */
                 conn = DBMgr.getConnection();
                 /** SQL指令 */
-                String sql = "INSERT INTO `missa`.`order_product`(`order_id`, `product_id`, `price`, `quantity`, `subtotal`)"
+                String sql = "INSERT INTO `orderitems`(`orders_id`, `products_id`, `price`, `quantity`, `subtotal`)"
                         + " VALUES(?, ?, ?, ?, ?)";
                 
                 /** 將參數回填至SQL指令當中 */
                 pres = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
                 pres.setLong(1, order_id);
                 pres.setInt(2, product_id);
-                pres.setDouble(3, price);
+                pres.setInt(3, price);
                 pres.setInt(4, quantity);
-                pres.setDouble(5, subtotal);
+                pres.setInt(5, subtotal);
                 
                 /** 執行新增之SQL指令並記錄影響之行數 */
                 pres.executeUpdate();
@@ -98,7 +98,7 @@ public class OrderItemHelper {
             /** 取得資料庫之連線 */
             conn = DBMgr.getConnection();
             /** SQL指令 */
-            String sql = "SELECT * FROM `missa`.`order_product` WHERE `order_product`.`order_id` = ?";
+            String sql = "SELECT * FROM `orderitems` WHERE `orders_id` = ?";
             
             /** 將參數回填至SQL指令當中 */
             pres = conn.prepareStatement(sql);
@@ -117,7 +117,7 @@ public class OrderItemHelper {
                 /** 將 ResultSet 之資料取出 */
                 int order_product_id = rs.getInt("id");
                 int product_id = rs.getInt("product_id");
-                double price = rs.getDouble("price");
+                int price = rs.getInt("price");
                 int quantity = rs.getInt("quantity");
                 int subtotal = rs.getInt("subtotal");
                 
