@@ -3,7 +3,7 @@ package ncu.im3069.demo.app;
 import org.json.*;
 
 public class Product {
-	/**5555555555*/
+	
     /** index，產品編號 */
     private int index;
 

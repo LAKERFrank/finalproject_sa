@@ -19,5 +19,4 @@
         <servlet-name>manager</servlet-name>
         <url-pattern>/api/manger.do</url-pattern>
     </servlet-mapping>
-    /*ffff*/
 </web-app>
