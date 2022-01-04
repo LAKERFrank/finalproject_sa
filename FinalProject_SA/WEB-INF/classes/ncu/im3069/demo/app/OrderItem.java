@@ -88,7 +88,7 @@ public class OrderItem {
     /**
      * 設定訂單細項編號
      */
-    private void setId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
