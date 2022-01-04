@@ -37,7 +37,7 @@ public class Order {
     /** modify，訂單修改時間 */
     private Timestamp modify;
     
-    private int total_price=0;
+//    private int total_price=0;
 
     /** oph，OrderItemHelper 之物件與 Order 相關之資料庫方法（Sigleton） */
     private OrderItemHelper oph = OrderItemHelper.getHelper();
@@ -196,13 +196,13 @@ public class Order {
         return this.phone;
     }
     
-    private void setTotal_Price(int total_price) {
-    	this.total_price=total_price;
-    }
-
-    public int getTotal_Price() {
-    	return this.total_price;
-    }
+//    private void setTotal_Price(int total_price) {
+//    	this.total_price=total_price;
+//    }
+//
+//    public int getTotal_Price() {
+//    	return this.total_price;
+//    }
     
     /**
      * 取得該名會員所有資料

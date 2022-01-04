@@ -10,4 +10,13 @@
         <servlet-name>member</servlet-name>
         <url-pattern>/api/member.do</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>manager</servlet-name>
+        <servlet-class>ncu.im3069.demo.controller.ManagerController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>manager</servlet-name>
+        <url-pattern>/api/manger.do</url-pattern>
+    </servlet-mapping>
 </web-app>

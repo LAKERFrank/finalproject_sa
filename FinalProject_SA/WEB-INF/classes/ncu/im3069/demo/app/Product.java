@@ -71,7 +71,7 @@ public class Product {
     } 
 
     /**
-     * 取得產品編號
+     * 取得產品編號S
      *
      * @return int 回傳產品編號
      */
