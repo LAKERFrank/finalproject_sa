@@ -62,10 +62,15 @@ public class ProductHelper {
                 String name = rs.getString("name");
                 int price = rs.getInt("price");
                 String image = rs.getString("image");
-                String describe = rs.getString("describe");
+                String author = rs.getString("author");
+                String publisher = rs.getString("publisher");
+                Timestamp publish_date = rs.getTimestamp("publish_date");
+                int stock = rs.getInt("stock");
+                String genre = rs.getString("genre");
+                
                 
                 /** 將每一筆商品資料產生一名新Product物件 */
-                p = new Product(product_id, name, price, image, describe);
+                p = new Product(product_id, name, price, image, author, publisher, publish_date, stock, genre);
                 /** 取出該項商品之資料並封裝至 JSONsonArray 內 */
                 jsa.put(p.getData());
             }
@@ -143,10 +148,14 @@ public class ProductHelper {
               String name = rs.getString("name");
               int price = rs.getInt("price");
               String image = rs.getString("image");
-              String describe = rs.getString("describe");
+              String author = rs.getString("author");
+              String publisher = rs.getString("publisher");
+              Timestamp publish_date = rs.getTimestamp("publish_date");
+              int stock = rs.getInt("stock");
+              String genre = rs.getString("genre");
               
               /** 將每一筆商品資料產生一名新Product物件 */
-              p = new Product(product_id, name, price, image, describe);
+              p = new Product(product_id, name, price, image, author, publisher, publish_date, stock, genre);
               /** 取出該項商品之資料並封裝至 JSONsonArray 內 */
               jsa.put(p.getData());
           }
@@ -208,10 +217,14 @@ public class ProductHelper {
                 String name = rs.getString("name");
                 int price = rs.getInt("price");
                 String image = rs.getString("image");
-                String describe = rs.getString("describe");
+                String author = rs.getString("author");
+                String publisher = rs.getString("publisher");
+                Timestamp publish_date = rs.getTimestamp("publish_date");
+                int stock = rs.getInt("stock");
+                String genre = rs.getString("genre");
                 
                 /** 將每一筆商品資料產生一名新Product物件 */
-                p = new Product(product_id, name, price, image, describe);
+                p = new Product(product_id, name, price, image, author, publisher, publish_date, stock, genre);
             }
 
         } catch (SQLException e) {
