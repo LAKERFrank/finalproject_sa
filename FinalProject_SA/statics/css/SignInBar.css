@@ -1,0 +1,44 @@
+#valuesContainer {
+    top: 18px;
+    border: 0 px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 48rem;
+    height:6rem;
+    font-weight: bold;
+    background-color: #7fcac3;
+    position: relative;
+}
+
+
+#signinchineseTitle {
+    font-family: sans-serif;
+    font: Source;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 3.8rem;
+    text-align: center;
+    color: #3a5d55;
+}
+
+
+#signinenglishTitle {
+    font-family: sans-serif;
+    font: Source;
+    font-weight: 600;
+    font-size: 18px;
+    color: white;
+    line-height: 10px;
+    text-align: center;
+}
+
+
+#hrline {
+border: none;
+width: 12rem;
+border-top: .3rem solid  #009588;
+top: 2.35rem;
+right: 18rem;
+z-index: 999;
+position: absolute;
+}

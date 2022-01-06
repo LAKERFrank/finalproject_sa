@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <!-- Bootstrap core CSS -->
+        <link href="statics/css/bootstrap.min.css" rel="stylesheet">
+        <link href="statics/css/font-awesome.min.css" rel="stylesheet">
+        <link href="statics/icon/favicon.ico" type="image/x-icon" rel="icon">
+        <link href="statics/icon/favicon.ico" type="image/x-icon" rel="shortcut icon">
+        
+
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Jekyll v3.8.5">
+        <!-- rwd -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            .bd-placeholder-img {
+             font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            }
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+                    
+                }
+            }
+        </style>
+
+        <!-- Custom styles for this template -->
+        <link href="statics/css/product.css" rel="stylesheet">
+        <link href="statics/css/jquery-confirm.css" rel="stylesheet">
+
+        <script src="statics/js/jquery-3.4.1.min.js"></script>
+        <script src="statics/js/jquery-confirm.js"></script>
+        
+<!--自寫css(分區)-->
+        <link rel="stylesheet" href="statics/css/div.css">
+
+<!-- 預覽列的css -->
+    <style>
+        /* 商品預覽的框框 */
+        .card{      
+        width: 76rem;
+        height: 500px;
+        top: 6rem;
+        left: 27rem;
+        transform: translate(-50%,-50%);  
+        }
+
+        .top-section{
+            top: 1rem;
+            left: 2rem;
+            height:500px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #image-container{
+            top:1rem;
+            width: 213px;
+            height: 300px;
+        }
+
+        .nav{
+            text-align: center;
+            
+        }
+
+        .pic{
+            border: 1px solid#ddd;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .pic:hover{
+            border-color: #7fcac3;
+            cursor: pointer;
+        }
+
+        .name{
+            font-size: 20px;
+        }
+
+        .btn{
+            display: block;
+            background: rgb(250, 250, 109);
+            text-align: center;
+            color:#616161;
+            font-weight: bold;
+            padding:10px;
+            width: 180px;
+            height: 45px;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .btn:hover{
+            background-color: #858585;
+            color:rgb(255, 255, 255);
+        }
+
+        .store_icon{
+            height: 8px;
+            width: 8px;
+
+        }
+    </style>
+
+        <!--自寫css(button)-->
+    <style>
+        /*搜尋欄位框(含bar跟button)*/
+        .search{
+            position: relative;
+            width: 50%;
+            float: left;
+            margin-left:200px;
+            margin-top: 5px;
+            display:inline;
+            
+            }
+    
+        /*搜尋按鈕*/
+        .search-btn{
+            width: 80px;
+            height: 35px;
+            background-color: #009588;
+            color: white;
+            outline:none;
+            border: 2px solid #009588;
+            cursor: pointer; 
+            position: absolute;
+            top: 0;
+            right: 0; 
+            }
+            
+        /*搜尋欄位框(bar)*/
+        .search-bar{
+            width: 100%;
+            height: 35px;
+            font-size: 13px;
+            color:#3a5d55;
+            padding:9px;
+            border: 3px solid #009588;
+            background-color: white;
+            outline: none;
+            }
+    
+        /*預設提醒字*/    
+        input::placeholder { 
+            color: #87b1ad;
+            font-size: 13px;
+        }
+    
+        /*推薦關鍵字*/
+        ul li a {
+            color:#00796b;
+            padding-right: 8px;
+            display:inline;
+            font-weight:bold;
+            font-size: 13px;
+            }
+        ul li {
+            color:#00796b;
+            padding-left: 10px;
+            padding-right: 10px;
+            display:inline;
+            font-weight:bold;
+            font-size: 13px;
+            }
+    
+    
+    
+        </style>
+    
+        
+        </head>
+            <title> 書籍介紹 | 有購書鬍線上書城</title>
+        </head>
+    
+    <!-- 書城的bar-->
+        <body style="background-color:#d2f1ee; overflow: visible;">
+    
+            <div class="top d-flex flex-column flex-md-row align-items-center border-bottom shadow-sm" >
+    
+                <div class="mr-auto p-1"><a href="home_page.html" title="首頁"><img src="statics/icon/YOGOBOOKSTORE.png" alt="" width="13.2%"></a></div>
+                        
+                <div class="d-flex flex-row">
+                    
+                    <a href="mycart.html" title="購物車"><img src="statics\icon\cart.png" alt="" width="35" height="35" style="margin-right:6px"></a>
+                    <a class="p-2" href="login.html" style="color:#00796b; font-size:13px; text-decoration:none;"><nobr><strong>登入</strong></nobr></a>
+    
+                    <a class="p-2" href="register.html" style="color:#d2f1ee; font-size:13px; text-decoration:none;"><nobr><strong>加入會員</strong></nobr></a>
+                    <!-- 要登入
+                    <a class="p-2" href="order.html" style="color:#d2f1ee; font-size:13px; text-decoration:none;"><nobr><strong>會員專區</strong></nobr></a>
+                    -->       
+                </div> 
+            </div>
+    
+    <!-- 搜尋欄位-->
+            <div class="main" style="background-color:#b9dfdb; padding: 9px">
+                <div class="search" >
+                    <input class="search-bar" type="search" name="search" id="search" placeholder="  輸入想搜尋的書籍、作者名稱、出版社…">
+                    <button class="search-btn" style="outline: none;"><strong>🔍</strong></button>
+                </div>
+    
+                <div style="padding: 8px; white-space:nowrap">
+                    <ul>
+                        <li>推薦關鍵字：</li>
+                        <li>
+                            <a href="#" style="text-decoration:none;">Python</a>
+                            <a href="#" style="text-decoration:none;">Java</a>
+                            <a href="#" style="text-decoration:none;">系統分析</a>
+                        </li>
+                    </ul>
+                </div>
+                <div style="border-radius: 3px; color:#3a5d55; font-weight: bold; font-size: 13px; background-color:#f1fbfa; margin-left: 1rem; margin-right: 1rem; margin-top: 2rem; padding: 10px">
+                > 中文書 > 電腦商品 > 商品介紹
+                </div>        
+
+            
+<!-- 預覽列的html -->
+                <div id="container" style="width:500px">
+                    <div id="product" style="width:250px; float: left; color:#616161; margin-left: 1rem; margin-right: 1rem; padding: 11rem">
+                        <div class="card" >
+                            <div class="top-section">
+                                <img id="image-container" src="statics\img\product/p13.jpg" alt=""  style="margin-top:5px; margin-left:3.5rem;float:left; display: inline;">
+                                
+                                <div style="margin-left: 21rem; margin-top: 2rem">  
+                                    <div class="name"><b>資料科學的統計實務：探索資料本質、扎實解讀數據，才是機器學習成功建模的第一步</b></div>
+                                    <br>
+                                    <br>
+                                    <div class="author" style="color:#a9a4a4">作者： 江崎貴裕</div>
+                                    <div class="translator" style="color:#a9a4a4">譯者： 温政堯</div>
+                                    <div class="publishing" style="color:#a9a4a4">出版社：旗標 </div>
+                                    <div class="languge" style="color:#a9a4a4">語言：繁體中文</div>
+                                    <div class="publish_time" style="color:#a9a4a4">出版日期：2021/11/01</div>
+                                    <div class="price" style="margin-left: 500px; font-size: 20px;">
+                                        <b>&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;優惠價：<font color= #f54337>473</font>元</b></div>
+                                    <br>
+                                    <hr size="8px" align="center" width="800px" style="border-top:1px dashed #7fcac3">
+                                    
+                                    
+                                </div>
+                                
+                                <div class="nav" style="margin-left:1px; margin-bottom: 5rem; ">
+                                    <div style="margin-top: 1rem;">
+                                        <img class="pic" width="74px" height="104px" onclick="change_img(this)" src="statics\img\product/p13.jpg" alt="" style="margin: 2px 2px;">
+                                        <img class="pic" width="74px" height="104px" onclick="change_img(this)" src="statics\img\product/p14.jpg" alt="" style="margin: 2px 2px;">
+                                        <img class="pic" width="74px" height="104px" onclick="change_img(this)" src="statics\img\product/p15.jpg" alt="" style="margin: 2px 2px;">
+                                        <img class="pic" width="74px" height="104px" onclick="change_img(this)" src="statics\img\product/p16.jpg" alt="" style="margin: 2px 2px;">   
+                                    </div>   
+                                    <h5 style=" font-size: 13px"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;運送方式：</b></h5>    
+                                    
+                                    <span >
+                                        <br>
+                                        <img height="25" width="25" src="statics/icon/711.png" style=" margin-left:5px; float: left; top: 25px;"> 
+                                        <font style="font-size: 9px; padding-left:8px;color:#a9a4a4;">可取貨點：學央門市、學屋門市、央大門市</font>
+                                    </span>
+
+                                        <br>
+                                        <a onclick="myFunction()" class="btn" style="margin-left:280px; display: inline;">放入購物車</a>
+                                        
+                                        <script>
+                                            function myFunction() {
+                                            confirm("已成功放入購物車！");
+                                            }
+                                        </script>
+                                </div>
+                                
+
+                                
+
+                                <script type="text/javascript">
+                                    var container = document.getElementById("image-container")
+                                    function change_img(img){
+                                        container.src = img.src;
+                                    }
+                                </script>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>          
+        </body>
+</html>
+    

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <!-- Bootstrap core CSS -->
+        <link href="statics/css/bootstrap.min.css" rel="stylesheet">
+        <link href="statics/css/font-awesome.min.css" rel="stylesheet">
+        <link href="statics/icon/favicon.ico" type="image/x-icon" rel="icon">
+        <link href="statics/icon/favicon.ico" type="image/x-icon" rel="shortcut icon">
+        <link rel="stylesheet" href="statics/css/SignInBar.css">
+        <link rel="stylesheet" href="statics/css/email&password.css">
+        
+
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Jekyll v3.8.5">
+        <!-- rwd -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            .bd-placeholder-img {
+             font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            }
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+                    
+                }
+            }
+        </style>
+
+        <!-- Custom styles for this template -->
+        <link href="statics/css/product.css" rel="stylesheet">
+        <link href="statics/css/jquery-confirm.css" rel="stylesheet">
+
+        <script src="statics/js/jquery-3.4.1.min.js"></script>
+        <script src="statics/js/jquery-confirm.js"></script>
+        
+<!--自寫css(分區)-->
+        <link rel="stylesheet" href="statics/css/div.css">
+    </head>
+    <title> 會員登入 | 有購書鬍線上書城</title>
+</head>
+
+<!-- 書城的bar-->
+<body style="background-color:#d2f1ee; overflow: visible;">
+
+    <div class="top d-flex flex-column flex-md-row align-items-center border-bottom" >
+
+        <div class="mr-auto p-1"><a href="home_page.html" title="首頁"><img src="statics/icon/YOGOBOOKSTORE.png" alt="" width="12.2%"></a></div>
+            
+        <div class="d-flex flex-row">
+            <a class="p-2" href="register.html" style="color:#00796b; font-size:15px; text-decoration:none;"><nobr><strong>加入會員&nbsp; &nbsp; </strong></nobr></a>
+        </div>
+                
+    </div>
+
+<!--會員登入、線、sign in的bar-->
+    <div id="valuesContainer" >
+        <h1 id="signinchineseTitle">會員登入</h1>
+        <hr id="hrline">
+        <h1 id="signinenglishTitle">Sign In</h1>
+    </div>
+<!--會員登入、線、sign in的bar結束-->
+
+    <div id="signincontainer">
+        <div id="emailbox">
+            <h1 id="emailname">電子信箱 ( E-mail )<span style="color:#f54337"> *</span></h1>
+        </div>
+    
+        <div id="inputemailcontainer">    
+            <div id="inputemail">
+                <input id="email" type="text" size="95" style="height: 27px;"/>
+            </div>
+        </div>
+
+        <div id="passwordbox">
+            <h1 id="passwordname">
+                密碼 ( Password )<span style="color:#f54337"> *</span><span id="forgetpwline" style="color:#f54337">|</span><a href="#" style="color:#f54337" id="forgetpw">忘記密碼</a>
+            </h1>
+        </div>
+
+        <div id="inputpwcontainer">    
+            <div id="inputpw">
+                <input id="password" type="password" size="95" style="height: 27px;"/>
+            </div>
+        </div>
+
+        <div id="joinmemberbox">
+            <h1 id="stillnotamember" style="text-align: center;">
+                <span id="stillnotamemberline" style="font-size:14px;color:#3a5d55">還不是會員？&nbsp;&nbsp;|</span><a href="register.html" style="color:#f54337" id="joinmember">加入會員</a>
+            </h1>
+        </div>
+
+        <div id="loginbuttoncontainer">
+            <div id="loginbutton">
+                <button type="submit"  onclick="location.href='home_page.html'" style="outline: none;">
+                    <span>登入</span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

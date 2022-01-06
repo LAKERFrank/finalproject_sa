@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <!-- Bootstrap core CSS -->
+        <link href="statics/css/bootstrap.min.css" rel="stylesheet">
+        <link href="statics/css/font-awesome.min.css" rel="stylesheet">
+        <link href="statics/icon/favicon.ico" type="image/x-icon" rel="icon">
+        <link href="statics/icon/favicon.ico" type="image/x-icon" rel="shortcut icon">
+        
+
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Jekyll v3.8.5">
+        <!-- rwd -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            .bd-placeholder-img {
+             font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            }
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+                    
+                }
+            }
+        </style>
+
+        <!-- Custom styles for this template -->
+        <link href="statics/css/product.css" rel="stylesheet">
+        <link href="statics/css/jquery-confirm.css" rel="stylesheet">
+
+        <script src="statics/js/jquery-3.4.1.min.js"></script>
+        <script src="statics/js/jquery-confirm.js"></script>
+        
+<!--自寫css(分區)-->
+        <link rel="stylesheet" href="statics/css/div_payment.css">
+        <link rel="stylesheet" type="text/css" href="statics/css/dist/all.css">
+        
+        </head>
+            <title> 訂單完成 | 有購書鬍線上書城</title>
+        </head>
+    
+    <!-- 書城的bar-->
+    <body style="background-color:#d2f1ee; overflow: visible;">
+
+        <div class="top " style="display: inline-flex; flex-flow: row; justify-content: space-between; align-items: center;">
+    
+            <a class="mr p-1" href="home_page.html" title="首頁" style="display:flex; width:178px;"><img src="statics/icon/YOGOBOOKSTORE.png" alt="" width="80%"></a>
+            <div>
+                <a  title="購物車"><img src="statics\icon/cart.png" alt="" width="80" height="80" style="margin-right:85px"></a>
+    
+            </div>
+    
+            <div class="d-flex flex-row p-3">
+                 
+                <a class="p-2" href="member_area.html" style="color:#d2f1ee; font-size:13px; text-decoration:none;"><nobr><strong>會員專區</strong></nobr></a>
+                        
+            </div> 
+    
+        </div>
+            
+<!-- 預覽列的html -->
+        <div style="border-radius: 3px; color:#3a5d55; font-weight: bold; font-size: 18px; background-color:#7fcac3; margin-left: 12rem; margin-right: 12rem; margin-top: 2rem; padding: 14px">
+                <center>已完成訂單</center>
+        </div>
+         
+        <!--訂單資訊  -->
+        <p style=" font-weight: bold; font-size: 16px;color:#7fcac3;text-align:center;margin-top: 1rem;">— 訂單資訊 —</p> 
+        <div style="border-radius: 3px; color:#3a5d55; font-weight: bold; font-size: 18px; background-color:#c5e2df; margin-left: 12rem; margin-right: 12rem; margin-top: 1rem; padding: 30px">
+                
+            <table style="table-layout : fixed; font-size:15px; color:#616161; margin-left:1rem; height: 4rem; width: 45rem ">
+                <tr>
+                  <th style="color: #3a5d55;text-align:left; ">|&nbsp;&nbsp;&nbsp;&nbsp;收件人：</th>
+                  <th style="color: #009588;text-align:right">何忻</th>
+                  <th></th>
+                  <th style="color: #3a5d55;text-align:left;">|&nbsp;&nbsp;&nbsp;&nbsp;取貨門市：</th>
+                  <th style="color: #009588;text-align:right">學央門市</th>
+                </tr>
+
+                <tr>
+                    <th style="color: #3a5d55;text-align:left;">|&nbsp;&nbsp;&nbsp;&nbsp;電話：</th>
+                    <th style="color: #009588;text-align:right;">0987654321</th>
+                    <th></th>
+                    <th style="color: #3a5d55;text-align:left;">|&nbsp;&nbsp;&nbsp;&nbsp;總金額：</th>
+                    <th style="color: #009588;text-align:right">816元</th>
+                </tr>
+            </table>
+        </div>          
+        <!-- ATM付款才有的資訊 -->
+        <p style="font-weight: bold; font-size: 16px;color:#7fcac3;text-align:center;margin-top: 1rem;">— ATM付款資訊 —</p> 
+        <div style=" border-radius: 3px; border-color:#7fcac3; border-style:solid; border-width:2px; font-weight: bold; font-size: 18px; background-color:#ffffff; margin-left: 12rem; margin-right: 12rem; margin-top: 1rem; padding: 30px; ">
+                
+            <table style="table-layout : fixed; font-size:15px; color:#616161;margin-top:1rem; margin-left:3rem; height: 10rem; width: 60rem ">
+       
+                <tr>
+                    <th></th>
+                    <th style="color:#009588">銀行名稱：<font color="#f54337">812 台新銀行</font></th>
+                    <th></th>
+                </tr>
+
+                <tr>
+                    <th style="font-size:20px; color:#009588"colspan="2">您的ATM轉帳帳號如下</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+
+                <tr>
+                    <th></th>
+                    <th style="color:#009588" colspan="2">轉帳帳號：<font color="#f54337">1234567812345678</font>&nbsp;（共16碼）</th>
+                    <th></th>
+                </tr>
+
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th style="font-size:12px; color:#00796b;text-align:right;">⚠請於<font color="#f54337">2022/01/20</font>前完成繳款</th>
+                </tr>
+
+            </table>
+            
+        </div>
+
+        <div style="padding-top: 25px; padding-bottom: 200px; display:flex; flex-flow: row; justify-content: center; align-items: center;">
+
+            <div style="display: inline-flex; justify-content: center; align-items: center;">
+                <button class="btn" onclick="javascript:location.href='home_page.html'" style="width: 200px;" >確定</button>
+            </div>
+        </div>
+        
+        </body>
+</html>
+    

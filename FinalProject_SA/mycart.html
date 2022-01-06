@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <!-- Bootstrap core CSS -->
+        <link href="statics/css/bootstrap.min.css" rel="stylesheet">
+        <link href="statics/css/font-awesome.min.css" rel="stylesheet">
+        <link href="statics/icon/favicon.ico" type="image/x-icon" rel="icon">
+        <link href="statics/icon/favicon.ico" type="image/x-icon" rel="shortcut icon">
+        
+
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Jekyll v3.8.5">
+        <!-- rwd -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            .bd-placeholder-img {
+             font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            }
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+                    
+                }
+            }
+        </style>
+
+        <!-- Custom styles for this template -->
+        <link href="statics/css/product.css" rel="stylesheet">
+        <link href="statics/css/jquery-confirm.css" rel="stylesheet">
+
+        <script src="statics/js/jquery-3.4.1.min.js"></script>
+        <script src="statics/js/jquery-confirm.js"></script>
+        
+<!--自寫css(分區)-->
+        <link rel="stylesheet" href="statics/css/div_payment.css">
+        <link rel="stylesheet" type="text/css" href="statics/css/dist/all.css">
+    </head>
+    <title> 購物車 | 有購書鬍線上書城</title>
+</head>
+
+<!-- 書城的bar-->
+<body style="background-color:#d2f1ee; overflow: visible;">
+
+    <div class="top " style="display: inline-flex; flex-flow: row; justify-content: space-between; align-items: center;">
+
+        <a class="p-1" href="home_page.html" title="首頁" style="display:flex; width:178px;"><img src="statics/icon/YOGOBOOKSTORE.png" alt="" width="80%"></a>
+        <div>
+            <a title="購物車"><img src="statics/icon/cart.png" alt="" width="80" height="80" style="margin-right:85px"></a>
+
+        </div>
+
+        <div class="d-flex flex-row p-3">
+             
+            <a class="p-2" href="member_area.html" style="color:#d2f1ee; font-size:13px; text-decoration:none;"><nobr><strong>會員專區</strong></nobr></a>
+                    
+        </div> 
+
+    </div>
+<!-- 結帳跟付款方式的bar-->
+    <div style="height: 40px;display:flex; flex-flow: row; justify-content: center; align-items: center; background-color: #7fcac3;">
+
+        <div class = "mycartdiv" style="background-color:#d2f1ee">
+            <p class = "mycartp" style="font-weight:bold;color:#00796b" >① 書籍結帳</p>            
+        </div>
+
+        <div class = "mycartdiv">
+            <p class = "mycartp" style="font-weight:bold;">② 付款方式</p>            
+        </div>
+
+    </div>
+
+   <!-- 全選--> 
+    <script type="text/javascript">
+        function check_all(obj,cName)
+        {
+            var checkboxs = document.getElementsByName(cName);
+            for(var i=0;i<checkboxs.length;i++){checkboxs[i].checked = obj.checked;}
+        }
+        </script>
+<!-- 商品明細ㄉbar-->
+    <div style=" padding-top: 25px; padding-bottom: 25px; display:flex; flex-flow: row; justify-content: center; align-items: center;">
+    
+        <div class="border-top" style="border-radius:5px; display:inline-flex; flex-flow: row; background-color: #7fcac3;">
+            <div style="display: inline-flex;  align-items: center;">
+                <p style=" display:inline-block ; align-items: center; margin-top: 24px;padding-left: 10px;">
+                    <input type="checkbox" id="checkall" style="width: 20px; height: 20px;" onclick="check_all(this,'check')">
+                </p>
+                <strong><span style="color: #00796b; padding-left: 25px ;padding-right: 25px;">|</span></strong>
+                <strong><span style="color: #00796b; padding-left: 25px ;padding-right: 175px;">商品明細</span></strong>
+                <strong><span style="color: #00796b; padding-left: 25px ;padding-right: 25px;">|</span></strong>
+                <strong><span style="color: #00796b; padding-left: 25px ;padding-right: 25px;">小計</span></strong>
+                <strong><span style="color: #00796b; padding-left: 25px ;padding-right: 25px;">|</span></strong>
+                <strong><span style="color: #00796b; padding-left: 25px ;padding-right: 25px;">數量</span></strong>
+                <strong><span style="color: #00796b; padding-left: 25px ;padding-right: 25px;">|</span></strong>
+                <strong><span style="color: #00796b; padding-left: 25px ;padding-right: 50px;">庫存</span></strong>
+            </div>
+
+        </div>
+    </div>
+
+    <div style="display:flex; flex-flow: row; justify-content: center; align-items: center; ">
+
+        <div style="width: 786px; border-radius:5px; display: inline-flex; background-color: white; padding-bottom: 25px; border-bottom-color: #7fcac3; border-bottom-style: dotted ; border-bottom-width: 1px;">
+
+            <div style="display: inline-flex;  align-items: center;">
+                
+                <p style=" display:inline-block ; align-items: center; margin-top: 24px;padding-left: 10px;">
+                    <input type="checkbox" name="check" style="width: 20px; height: 20px;">
+                </p>
+
+            </div>
+
+            <div style="width: 395px; display: inline-flex; flex-flow: row; justify-content:flex-start;">
+                <img src="statics/img/product/mypay.jfif" alt="" width="30%" style="padding-top: 25px;">
+                <div style=" display:flex; flex-flow: row; justify-content: center; align-items: center;">
+                    <strong><p style="padding-top: 25px; text-align: center;">大家說日本語初級I 改訂版</p></strong>
+                </div>
+            </div>
+
+            <div style="display: inline-flex; flex-flow: row; justify-content: space-between;">
+                <div style=" padding-right: 57px; display:flex; flex-flow: row; justify-content: center; align-items: center;">
+                    <strong><p style="padding-top: 25px; text-align: center;"><span style="color: red;">432</span>元</p></strong>
+                </div>
+
+                <div style="padding-left: 50px; padding-right: 57px; display:flex; flex-flow: row; justify-content: center; align-items: center;">
+                    <input type="text" style="height: 40px; width: 20px; text-align: center;">
+                </div>
+
+                <div style=" padding-right: 57px; display:flex; flex-flow: row; justify-content: center; align-items: center;">
+                    <strong><p style="padding-left: 60px; padding-top: 25px; text-align: center;">有</p></strong>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div style="display:flex; flex-flow: row; justify-content: center; align-items: center; ">
+
+        <div style="width: 786px; border-radius:5px; display: inline-flex; background-color: white; padding-bottom: 25px; border-bottom-color: #7fcac3; border-bottom-style: dotted ; border-bottom-width: 1px;">
+
+            <div style="display: inline-flex;  align-items: center;">
+                
+                <p style=" display:inline-block ; align-items: center; margin-top: 24px;padding-left: 10px;">
+                    <input type="checkbox" name="check" style="width: 20px; height: 20px;">
+                </p>
+
+            </div>
+
+            <div style="width: 395px; display: inline-flex; flex-flow: row; justify-content:flex-start;">
+                <img src="statics/img/product/mypay.jfif" alt="" width="30%" style="padding-top: 25px;">
+                <div style=" display:flex; flex-flow: row; justify-content: center; align-items: center;">
+                    <strong><p style="padding-top: 25px; text-align: center;">大家說日本語初級I 改訂版</p></strong>
+                </div>
+            </div>
+
+            <div style="display: inline-flex; flex-flow: row; justify-content: space-between;">
+                <div style=" padding-right: 57px; display:flex; flex-flow: row; justify-content: center; align-items: center;">
+                    <strong><p style="padding-top: 25px; text-align: center;"><span style="color: red;">432</span>元</p></strong>
+                </div>
+
+                <div style="padding-left: 50px; padding-right: 57px; display:flex; flex-flow: row; justify-content: center; align-items: center;">
+                    <input type="text" style="height: 40px; width: 20px; text-align: center;">
+                </div>
+
+                <div style=" padding-right: 57px; display:flex; flex-flow: row; justify-content: center; align-items: center;">
+                    <strong><p style="padding-left: 60px; padding-top: 25px; text-align: center;">有</p></strong>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div style="padding-top: 25px; padding-bottom: 25px; height: 40px;display:flex; flex-flow: row; justify-content: center; align-items: center;">
+
+        <div style="border-radius:5px; height: 40px; width: 780px; display:inline-flex; justify-content: flex-end; align-items: center;">
+            <strong><p style=" display:inline-block;margin-top: 18px; text-align: center; color:#00796b;">超商取貨郵資 NT$ <span style="color: red;">60</span> 元</p></strong>
+
+        </div>
+
+    </div>
+
+    <div style="padding-top: 25px; padding-bottom: 25px; height: 40px;display:flex; flex-flow: row; justify-content: center; align-items: center;">
+
+        <div style="border-radius:5px; height: 40px; width: 780px; display:inline-flex; justify-content:flex-end; align-items: center;  background-color: #7fcac3;">
+            <strong><p style="padding-right: 30px; display:inline-block;margin-top: 18px; text-align: center; color:#00796b;">共  <span style="color: red;">2</span> 項產品</p></strong>
+            <strong><p style="display:inline-block;margin-top: 18px; text-align: center; color: #00796b;">|</p></strong>
+            <strong><p style="padding-left: 30px; padding-right: 10px; display:inline-block;margin-top: 18px; text-align: center; color: #00796b;">總金額 NT$ <span style="color: red;">924</span> 元</p></strong>
+
+        </div>
+
+    </div>
+
+    <div style="padding-top: 25px; padding-bottom: 200px; display:flex; flex-flow: row; justify-content: center; align-items: center;">
+
+        <div style="display: inline-flex; justify-content: center; align-items: center;">
+            <button class="btn" onclick="javascript:location.href='mypay.html'" style="width: 200px;" >選擇付款方式</button>
+        </div>
+
+    </div>
+</body>
+
+</html>
