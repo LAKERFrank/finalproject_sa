@@ -477,9 +477,8 @@ public class MemberHelper {
             /** 取得資料庫之連線 */
             conn = DBMgr.getConnection();
             /** SQL指令 */
-            String sql = "DECLARE bookPrice int"
-            		+ "	SELECT `price` into bookPrice FROM `products` where `products_id` = ? LIMIT 1"
-            		+ "	INSERT INTO `orders`(`members_id`,`modified`,`created`,`total_price`) VALUES (?,?,?,?)";
+            String sql = "INSERT INTO `members`(`name`,`email`,`password`,`phone`,`modified`,`created`,`login_times`,`status`) "
+            		+ "VALUES (?,?,?,?,?,?,?,?)";
             		
             
             /** 取得所需之參數 */
