@@ -70,7 +70,7 @@
         <h1 id="signinenglishTitle">Sign In</h1>
     </div>
 <!--會員登入、線、sign in的bar結束-->
-
+ <form id="form" accept-charset="utf-8">
     <div id="signincontainer">
         <div id="emailbox">
             <h1 id="emailname">電子信箱 ( E-mail )<span style="color:#f54337"> *</span></h1>
@@ -102,12 +102,14 @@
 
         <div id="loginbuttoncontainer">
             <div id="loginbutton">
-                <button type="submit"  onclick="location.href='home_page.html'" style="outline: none;">
+                <button type="submit" id="login" onclick="location.href='home_page.html'" style="outline: none;">
                     <span>登入</span>
                 </button>
             </div>
         </div>
-	<script>
+      </div>
+    </form>
+   <script>
 		$(document).ready(function() {
 			// 處理表單點擊事件
 			    var $form = $('#login');
@@ -170,7 +172,6 @@
 			    }
 			     
 			});
-	</script>
-    </div>
+ </script>
 </body>
 </html>
