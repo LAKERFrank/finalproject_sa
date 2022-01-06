@@ -477,8 +477,8 @@ public class MemberHelper {
             /** 取得資料庫之連線 */
             conn = DBMgr.getConnection();
             /** SQL指令 */
-            String sql = "INSERT INTO `members`(`name`,`email`,`password`,`phone`,`modified`,`created`,`login_times`,`status`) "
-            		+ "VALUES (?,?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO `members`(`name`,`email`,`password`,`modified`,`created`,`login_times`,`status`) "
+            		+ "VALUES (?,?,?,?,?,?,?)";
             		
             
             /** 取得所需之參數 */
