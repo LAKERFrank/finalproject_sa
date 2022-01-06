@@ -1,5 +1,7 @@
 package ncu.im3069.demo.app;
 
+import java.sql.Timestamp;
+
 import org.json.*;
 
 public class Product {
@@ -66,14 +68,22 @@ public class Product {
      * @param name 產品名稱
      * @param price 產品價格
      * @param image 產品圖片
-     * @param describe 產品敘述
+     * @param author 作者
+     * @param publisher 出版者
+     * @param publish_date 出版時間
+     * @param stock 庫存
+     * @param genre 類型
      */
-	public Product(int index, String name, int price, String image, String description) {
+	public Product(int index, String name, int price, String image, String author, String publisher, Timestamp publish_date, int stock, String genre) {
 		setIndex(index);
 		setName(name);
 		setPrice(price);
 		setImage(image);
-//		this.description = description;
+		setAuthor(author);
+		setPublisher(publisher);
+		setPublish_date(publish_date);
+		setStock(stock);
+		setGenre(genre);
 	}
 
     /**
