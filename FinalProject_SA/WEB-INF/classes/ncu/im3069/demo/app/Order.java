@@ -11,7 +11,7 @@ public class Order {
     /** id，訂單編號 */
     private int id;
 
-    //private int members_id;
+    private int members_id;
     
     /** name，會員姓名 */
     private String name;
