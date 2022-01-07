@@ -81,16 +81,16 @@ public class OrderController extends HttpServlet {
         JSONObject jso = jsr.getObject();
 
         /** 取出經解析到 JSONObject 之 Request 參數 */
-        String first_name = jso.getString("first_name");
-        String last_name = jso.getString("last_name");
-        String email = jso.getString("email");
-        String address = jso.getString("address");
+        String name = jso.getString("name");
+        //String email = jso.getString("email");
         String phone = jso.getString("phone");
+        String store = jso.getString("store");
+        String method = jso.getString("method");
         JSONArray item = jso.getJSONArray("item");
         JSONArray quantity = jso.getJSONArray("quantity");
 
         /** 建立一個新的訂單物件 */
-        Order od = new Order(first_name, last_name, email, address, phone);
+        Order od = new Order(name, phone, store, method);
 
         /** 將每一筆訂單細項取得出來 */
         for(int i=0 ; i < item.length() ; i++) {
@@ -106,7 +106,7 @@ public class OrderController extends HttpServlet {
         JSONObject result = oh.create(od);
 
         /** 設定回傳回來的訂單編號與訂單細項編號 */
-        od.setId((int) result.getLong("order_id"));
+        od.setID((int) result.getLong("order_id"));
         od.setOrderProductId(result.getJSONArray("order_product_id"));
 
         /** 新建一個 JSONObject 用於將回傳之資料進行封裝 */

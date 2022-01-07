@@ -13,7 +13,7 @@ public class Order {
 
     private int members_id;
     
-    /** first_name，會員姓名 */
+    /** name，會員姓名 */
     private String name;
 
     /** last_name，會員姓 */
@@ -37,6 +37,11 @@ public class Order {
     /** modify，訂單修改時間 */
     private Timestamp modify;
     
+    /** store，取貨店鋪 */
+    private String store;
+    
+    /** method，付款方式 */
+    private String method;
 //    private int total_price=0;
 
     /** oph，OrderItemHelper 之物件與 Order 相關之資料庫方法（Sigleton） */
@@ -46,19 +51,16 @@ public class Order {
      * 實例化（Instantiates）一個新的（new）Order 物件<br>
      * 採用多載（overload）方法進行，此建構子用於建立訂單資料時，產生一個新的訂單
      *
-     * @param first_name 會員名
-     * @param last_name 會員姓
+     * @param name 會員姓名
      * @param email 會員電子信箱
      * @param address 會員地址
      * @param phone 會員姓名
      */
-    public Order(String name, String phone) {
+    public Order(String name, String phone,	String store, String method) {
     	setName(name);
-//        this.first_name = first_name;
-//        this.last_name = last_name;
-//        this.email = email;
-//        this.address = address;
         setPhone(phone);
+        setStore(store);
+        setPayMethod(method);
         setCreateTime(Timestamp.valueOf(LocalDateTime.now()));
         setModifyTime(Timestamp.valueOf(LocalDateTime.now()));
     }
@@ -104,7 +106,7 @@ public class Order {
     /**
      * 設定訂單編號
      */
-    private void setID(int id) {
+    public void setID(int id) {
         this.id = id;
     }
 
@@ -117,7 +119,7 @@ public class Order {
         return this.id;
     }
     
-    private void setName(String name) {
+    public void setName(String name) {
     	this.name=name;
     }
 
@@ -148,7 +150,7 @@ public class Order {
 //        return this.email;
 //    }
 
-    private void setCreateTime(Timestamp create) {
+    public void setCreateTime(Timestamp create) {
     	this.create=create;
     }
     
@@ -161,7 +163,7 @@ public class Order {
         return this.create;
     }
 
-    private void setModifyTime(Timestamp modify) {
+    public void setModifyTime(Timestamp modify) {
     	this.modify=modify;
     }
     
@@ -183,7 +185,7 @@ public class Order {
 //        return this.address;
 //    }
 
-    private void setPhone(String phone) {
+    public void setPhone(String phone) {
     	this.phone=phone;
     }
     
@@ -194,6 +196,42 @@ public class Order {
      */
     public String getPhone() {
         return this.phone;
+    }
+    
+    /**
+     * 取得取貨店鋪
+     *
+     * @return String 回傳取貨店鋪
+     */
+    public void setStore(String store) {
+    	this.store=store;
+    }
+    
+    /**
+     * 取得取貨店鋪
+     *
+     * @return String 回傳取貨店鋪
+     */
+    public String getStore() {
+        return this.store;
+    }
+    
+    /**
+     * 取得付款方式
+     *
+     * @return String 回傳付款方式
+     */
+    public void setPayMethod(String method) {
+    	this.method=method;
+    }
+    
+    /**
+     * 取得付款方式
+     *
+     * @return String 回傳付款方式
+     */
+    public String getPayMethod() {
+        return this.method;
     }
     
 //    private void setTotal_Price(int total_price) {
@@ -216,7 +254,7 @@ public class Order {
     /**
      * 從 DB 中取得訂單產品
      */
-    private void getOrderProductFromDB() {
+    public void getOrderProductFromDB() {
         ArrayList<OrderItem> data = oph.getOrderProductByOrderId(this.id);
         this.list = data;
     }
