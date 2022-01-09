@@ -45,6 +45,9 @@ public class OrderHelper {
             String phone = order.getPhone();
             Timestamp create = order.getCreateTime();
             Timestamp modify = order.getModifyTime();
+//            String store = order.getStore();
+//            String pay_method = order.getPay_method();
+            
             
             /** 將參數回填至SQL指令當中 */
             pres = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
