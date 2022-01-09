@@ -1,0 +1,230 @@
+列出資料夾 PATH
+磁碟區序號為 B6C0-061F
+E:.
+|   .classpath
+|   .editorconfig
+|   .project
+|   .tomcatplugin
+|   edit.html
+|   index.html
+|   login.html
+|   member_area.html
+|   mycart.html
+|   mypay.html
+|   order_completion.html
+|   output.txt
+|   product_introduction.html
+|   register.html
+|   
++---.settings
+|       .jsdtscope
+|       org.eclipse.core.resources.prefs
+|       org.eclipse.jdt.core.prefs
+|       org.eclipse.wst.common.component
+|       org.eclipse.wst.common.project.facet.core.xml
+|       org.eclipse.wst.jsdt.ui.superType.container
+|       org.eclipse.wst.jsdt.ui.superType.name
+|       
++---doc
+|   |   allclasses-frame.html
+|   |   allclasses-noframe.html
+|   |   constant-values.html
+|   |   deprecated-list.html
+|   |   help-doc.html
+|   |   index.html
+|   |   overview-frame.html
+|   |   overview-summary.html
+|   |   overview-tree.html
+|   |   package-list
+|   |   script.js
+|   |   serialized-form.html
+|   |   stylesheet.css
+|   |   
+|   +---index-files
+|   |       index-1.html
+|   |       index-10.html
+|   |       index-11.html
+|   |       index-12.html
+|   |       index-13.html
+|   |       index-14.html
+|   |       index-2.html
+|   |       index-3.html
+|   |       index-4.html
+|   |       index-5.html
+|   |       index-6.html
+|   |       index-7.html
+|   |       index-8.html
+|   |       index-9.html
+|   |       
+|   \---ncu
+|       \---im3069
+|           +---demo
+|           |   +---app
+|           |   |   |   Member.html
+|           |   |   |   MemberHelper.html
+|           |   |   |   package-frame.html
+|           |   |   |   package-summary.html
+|           |   |   |   package-tree.html
+|           |   |   |   package-use.html
+|           |   |   |   
+|           |   |   \---class-use
+|           |   |           Member.html
+|           |   |           MemberHelper.html
+|           |   |           
+|           |   +---controller
+|           |   |   |   MemberController.html
+|           |   |   |   package-frame.html
+|           |   |   |   package-summary.html
+|           |   |   |   package-tree.html
+|           |   |   |   package-use.html
+|           |   |   |   
+|           |   |   \---class-use
+|           |   |           MemberController.html
+|           |   |           
+|           |   \---util
+|           |       |   DBMgr.html
+|           |       |   package-frame.html
+|           |       |   package-summary.html
+|           |       |   package-tree.html
+|           |       |   package-use.html
+|           |       |   
+|           |       \---class-use
+|           |               DBMgr.html
+|           |               
+|           \---tools
+|               |   JsonReader.html
+|               |   package-frame.html
+|               |   package-summary.html
+|               |   package-tree.html
+|               |   package-use.html
+|               |   
+|               \---class-use
+|                       JsonReader.html
+|                       
++---statics
+|   +---css
+|   |   |   bar.css
+|   |   |   bootstrap.min.css
+|   |   |   cake.generic.css
+|   |   |   div.css
+|   |   |   div_payment.css
+|   |   |   email&password.css
+|   |   |   font-awesome.min.css
+|   |   |   jquery-confirm.css
+|   |   |   member&line&register.css
+|   |   |   modify&line.css
+|   |   |   name&email&password&time&membergroup.css
+|   |   |   name&email&password.css
+|   |   |   product.css
+|   |   |   SignInBar.css
+|   |   |   _cardpayuse.scss
+|   |   |   
+|   |   \---dist
+|   |           all.css
+|   |           
+|   +---fonts
+|   |       fontawesome-webfont.eot
+|   |       fontawesome-webfont.svg
+|   |       fontawesome-webfont.ttf
+|   |       fontawesome-webfont.woff
+|   |       fontawesome-webfont.woff2
+|   |       FontAwesome.otf
+|   |       
+|   +---icon
+|   |       711.png
+|   |       advanced_member.png
+|   |       cart.png
+|   |       elementary_member.png
+|   |       intermediate_member.png
+|   |       YOGOBOOKSTORE.png
+|   |       
+|   +---img
+|   |   \---product
+|   |           mypay.jfif
+|   |           p1.jpg
+|   |           p10.jpg
+|   |           p11.jpg
+|   |           p12.jpg
+|   |           p13.jpg
+|   |           p14.jpg
+|   |           p15.jpg
+|   |           p16.jpg
+|   |           p2.jpg
+|   |           p3.png
+|   |           p4.jpg
+|   |           p5.jpg
+|   |           p6.jpg
+|   |           p7.jpg
+|   |           p8.jpg
+|   |           p9.jpg
+|   |           
+|   \---js
+|       |   big.min.js
+|       |   big.min.js.map
+|       |   cardpay.js
+|       |   jquery-3.4.1.min.js
+|       |   jquery-confirm.js
+|       |   
+|       \---dist
+|               cardpay.dev.js
+|               
+\---WEB-INF
+    |   web.xml
+    |   
+    +---classes
+    |   \---ncu
+    |       \---im3069
+    |           +---demo
+    |           |   +---app
+    |           |   |       .gitignore
+    |           |   |       Manager.class
+    |           |   |       Manager.java
+    |           |   |       ManagerHelper.class
+    |           |   |       ManagerHelper.java
+    |           |   |       Member.class
+    |           |   |       Member.java
+    |           |   |       MemberHelper.class
+    |           |   |       MemberHelper.java
+    |           |   |       Order.class
+    |           |   |       Order.java
+    |           |   |       OrderHelper.class
+    |           |   |       OrderHelper.java
+    |           |   |       OrderItem.class
+    |           |   |       OrderItem.java
+    |           |   |       OrderItemHelper.class
+    |           |   |       OrderItemHelper.java
+    |           |   |       Product.class
+    |           |   |       Product.java
+    |           |   |       ProductHelper.class
+    |           |   |       ProductHelper.java
+    |           |   |       
+    |           |   +---controller
+    |           |   |       .gitignore
+    |           |   |       ManagerController.class
+    |           |   |       ManagerController.java
+    |           |   |       MemberController.class
+    |           |   |       MemberController.java
+    |           |   |       OrderController.class
+    |           |   |       OrderController.java
+    |           |   |       ProductController.class
+    |           |   |       ProductController.java
+    |           |   |       Test.class
+    |           |   |       Test.java
+    |           |   |       
+    |           |   \---util
+    |           |           .gitignore
+    |           |           Arith.class
+    |           |           Arith.java
+    |           |           DBMgr.class
+    |           |           DBMgr.java
+    |           |           
+    |           \---tools
+    |                   .gitignore
+    |                   JsonReader.class
+    |                   JsonReader.java
+    |                   
+    \---lib
+            json-20180813.jar
+            mysql-connector-java-8.0.17.jar
+            servlet-api.jar
+            
