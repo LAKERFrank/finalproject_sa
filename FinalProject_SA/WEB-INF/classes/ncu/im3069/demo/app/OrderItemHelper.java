@@ -48,7 +48,7 @@ public class OrderItemHelper {
                 /** 取得資料庫之連線 */
                 conn = DBMgr.getConnection();
                 /** SQL指令 */
-                String sql = "INSERT INTO `orderitems`(`orders_id`, `products_id`, `price`, `quantity`, `subtotal`)"
+                String sql = "INSERT INTO `project_sa`.`orderitems`(`orders_id`, `products_id`, `price`, `quantity`, `subtotal`)"
                         + " VALUES(?, ?, ?, ?, ?)";
                 
                 /** 將參數回填至SQL指令當中 */
@@ -98,7 +98,7 @@ public class OrderItemHelper {
             /** 取得資料庫之連線 */
             conn = DBMgr.getConnection();
             /** SQL指令 */
-            String sql = "SELECT * FROM `orderitems` WHERE `orders_id` = ?";
+            String sql = "SELECT * FROM `project_sa`.`orderitems` WHERE `orders_id` = ?";
             
             /** 將參數回填至SQL指令當中 */
             pres = conn.prepareStatement(sql);
