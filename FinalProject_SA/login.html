@@ -155,9 +155,9 @@
 			                	if(response['status'] == 200) {
 			                        //看controller長怎樣抓id進去
 			                        console.log(response);
-			                        setCookie("userID", response.data[0]["id"]);
+			                        setCookie("userID", response.data[0]["members_id"]);
 			                    	alert(response.message);
-			                    	window.location.assign("/index.html");
+			                    	window.location.assign("index.html");
 			                    }
 			                    else if(response.status != 200){
 			                            alert('此組合不存在!');
