@@ -102,7 +102,7 @@
 
         <div id="loginbuttoncontainer">
             <div id="loginbutton">
-                <input type="button" value="login" id="login" style="outline: none;">
+                <input type="button" value="登入" id="login" style="outline: none;">
             </div>
         </div>  
         <!-- <input type="button" value="登入" id="login"> -->
@@ -142,19 +142,19 @@
 			            var data_string = JSON.stringify(data_object);
 			            // 發出GET的AJAX請求
 			            $.ajax({
-			                type: "GET",
-			                url: "api/member.do",
+			                type: "POST",
+			                url: "api/login.do",
 			                data: data_string,
 			                crossDomain: true,
 			                cache: false,
 			                dataType: 'json',
 			                timeout: 5000,
-			                //成功會進入案件瀏覽網頁或顯示錯誤訊息
+			                //成功會進入首頁或顯示錯誤訊息
 			                success: function (response) {
 			                	if(response['status'] == 200) {
 			                        //看controller長怎樣抓id進去
 			                        console.log(response);
-			                        setCookie("userID", response.data[0]["members_id"]);
+			                        //setCookie("userID", response.data[0]["members_id"]);
 			                    	alert(response.message);
 			                    	window.location.assign("index.html");
 			                    }

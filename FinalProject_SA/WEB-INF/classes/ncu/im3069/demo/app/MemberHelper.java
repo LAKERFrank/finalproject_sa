@@ -278,6 +278,38 @@ public class MemberHelper {
         return response;
     }
     
+	public boolean checkLogin(Member m){
+	        
+	        int row = -1;
+	        ResultSet rs = null;
+	        
+	        try {
+	            
+	            conn = DBMgr.getConnection();
+	            
+	            String sql = "SELECT count(*) FROM `project_sa`.`members` WHERE `email` = ? AND `password` = ?";
+	            String email = m.getEmail();
+	            String password = m.getPassword();
+	             
+	            pres = conn.prepareStatement(sql);
+	            pres.setString(1, email);
+	            pres.setString(2, password);
+	            
+	            rs = pres.executeQuery();
+	            rs.next();
+	            row = rs.getInt("count(*)");
+	            System.out.print(row);
+	
+	        } catch (SQLException e) {
+	            System.err.format("SQL State: %s\n%s\n%s", e.getErrorCode(), e.getSQLState(), e.getMessage());
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        } finally {
+	            DBMgr.close(rs, pres, conn);
+	        }
+	        return (row == 1) ? true : false;
+	    }
+    
     /**
      * 透過會員編號（ID）取得會員資料
      *

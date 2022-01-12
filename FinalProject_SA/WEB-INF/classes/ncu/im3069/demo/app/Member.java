@@ -97,6 +97,11 @@ public class Member {
         setStatus(status);
     }
     
+    public Member(String email, String password) {
+        setEmail(email);
+        setPassword(password);
+    }
+    
     /**
      * 設定ID
      * 
