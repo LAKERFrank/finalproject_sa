@@ -477,8 +477,8 @@ public class MemberHelper {
             /** 取得資料庫之連線 */
             conn = DBMgr.getConnection();
             /** SQL指令 */
-            String sql = "INSERT INTO `project_sa`.`members`(`name`,`email`,`password`,`modified`,`created`,`login_times`,`status`) "
-            		+ "VALUES (?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO `project_sa`.`members`(`name`,`email`,`password`,`created`,`login_times`,`status`) "
+            		+ "VALUES (?,?,?,?,?,?)" ;
             		
             
             /** 取得所需之參數 */
@@ -494,9 +494,9 @@ public class MemberHelper {
             pres.setString(2, email);
             pres.setString(3, password);
             pres.setTimestamp(4, Timestamp.valueOf(LocalDateTime.now()));
-            pres.setTimestamp(5, Timestamp.valueOf(LocalDateTime.now()));
-            pres.setInt(6, login_times);
-            pres.setInt(7, status);
+            //pres.setTimestamp(5, Timestamp.valueOf(LocalDateTime.now()));
+            pres.setInt(5, login_times);
+            pres.setInt(6, status);
             
             /** 執行新增之SQL指令並記錄影響之行數 */
             row = pres.executeUpdate();
