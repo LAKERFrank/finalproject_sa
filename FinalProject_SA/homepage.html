@@ -43,7 +43,31 @@
         <script src="statics/js/jquery-confirm.js"></script>
         
 <!--自寫css(分區)-->
-        <link rel="stylesheet" href="statics/css/div.css">
+    <link rel="stylesheet" href="statics/css/div.css">
+
+<!--字寫css_一鍵上拉  -->
+<style>
+    #gotop {
+    position:fixed;
+    outline:none;
+    z-index:90;
+    right:30px;
+    bottom:31px;
+    display:none;
+    width:50px;
+    height:50px;
+    color:#fff;
+    background:#009588;
+    line-height:50px;
+    border-radius:50%;
+    transition:all 0.35s;
+    text-align: center;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    }
+    #gotop :hover{
+    background:#00796b;
+    }
+</style>
 
 <!--自寫css(button)-->
     <style>
@@ -57,7 +81,7 @@
         position: relative;
         width: 50%;
         float: left;
-        margin-left:200px;
+        margin-left:300px;
         margin-top: 5px;
         display:inline;
     
@@ -65,7 +89,7 @@
 
     /*搜尋按鈕*/
     .search-btn{
-        width: 80px;
+        width: 100px;
         height: 35px;
         background-color: #009588;
         color: white;
@@ -74,12 +98,12 @@
         cursor: pointer; 
         position: absolute;
         top: 0;
-        right: 0; 
+        right: -380px; 
         }
         
     /*搜尋欄位框(bar)*/
     .search-bar{
-        width: 100%;
+        width: 1320px;
         height: 35px;
         font-size: 13px;
         color:#3a5d55;
@@ -121,15 +145,14 @@
 
         <div class="top d-flex flex-column flex-md-row align-items-center border-bottom shadow-sm" >
 
-            <div class="mr-auto p-1"><a href="home_page.html" title="首頁"><img src="statics/icon/YOGOBOOKSTORE.png" alt="" width="13.2%"></a></div>
+            <div class="mr-auto p-1"><a href="#" title="首頁"><img src="statics/icon/YOGOBOOKSTORE.png" alt="" width="13.2%"></a></div>
                     
             <div class="d-flex flex-row">
                 
                 <a href="mycart.html" title="購物車"><img src="statics/icon/cart.png" alt="" width="35" height="35" style="margin-right:6px"></a>
-                
                 <!-- 要寫js盼測登入，在來才會跳轉會員中心 
                 <a class="p-2" href="order.html" style="color:#d2f1ee; font-size:13px; text-decoration:none;"><nobr><strong>會員專區</strong></nobr></a>
-                -->
+                -->      
             </div> 
         </div>
 
@@ -140,15 +163,8 @@
                 <button class="search-btn" style="outline: none;"><strong>🔍</strong></button>
             </div>
 
-            <div style="padding: 8px; white-space:nowrap">
-                <ul>
-                    <li>推薦關鍵字：</li>
-                    <li>
-                        <a href="#" style="text-decoration:none;">Python</a>
-                        <a href="#" style="text-decoration:none;">Java</a>
-                        <a href="#" style="text-decoration:none;">系統分析</a>
-                    </li>
-                </ul>
+            <div style="padding: 8px; white-space:nowrap;">
+         
             </div>
 
         <!--css商品陳列-->
@@ -156,7 +172,7 @@
 
             .product1, .product2, .product3, .product4{
                  /*與search bar的距離*/
-                width:220px;
+                width:330px;
                 height:350px;
                 background-color: white;
                 vertical-align: center;  
@@ -189,8 +205,9 @@
             }
 
             .introduction{
-                width: 218.5px;
-                height:35px;
+                margin-top: 20px;
+                width: 340px;
+                height:60px;
                 background-color: #7fcac3;
                 position:absolute;
                 left:0;
@@ -204,20 +221,20 @@
 
 <!--商品欄位(熱銷書籍)--> 
 
-            <div style="padding-left: 240px">
+            <div style="padding-left: 300px">
                <div>
                <!--熱銷書籍bar -->
-                <div style="border-radius:10px;  padding:5px; padding-left:10px; margin-bottom: 15px; margin-top: 30px; font-weight:bold; font-size:20px; width: 880px; color:#e57373; background-color:white; white-space:nowrap; border-bottom-color:#e57373; border-bottom-width:3px; border-bottom-style:solid">
+                <div  id="section1" style="border-radius:10px;  padding:5px; padding-left:10px; margin-bottom: 15px; margin-top: 55px; font-weight:bold; font-size:20px; width: 1320px; color:#e57373; background-color:white; white-space:nowrap; border-bottom-color:#e57373; border-bottom-width:3px; border-bottom-style:solid">
                      熱銷書籍
                 </div style="white-space: nowrap">
 
                 <!--商品1-->
                 <div class="product1" style="border-left:1px #e0e0e0 solid; border-bottom:1px #e0e0e0 solid">
-                    <a href="#" style="text-decoration:none;"><div class="p1" style="margin: 2px" >
+                    <a href="product_introduction_test.html" style="text-decoration:none;"><div class="p1" style="margin: 2px" >
                         <img src="statics\img\product/p1.jpg" style="display:block; margin:0 auto; padding-top:20px">
                         <div class="product_name"><b>原子習慣：細微改變帶來巨大成就的實證法則</b></div>
                         <div class="product_author">作者：詹姆斯‧克利爾</div>
-                        <div class="introduction" style="text-align:center; line-height:32px; color:#616161"><b>優惠價  <font color= #f54337>261</font> 元</b></div>
+                        <div class="introduction" style="text-align:center; line-height:60px; color:#616161"><b>優惠價  <font color= #f54337>261</font> 元</b></div>
                     </div></a>
                 </div>
                 <!--商品2-->
@@ -226,7 +243,7 @@
                         <img src="statics\img\product/p2.jpg" style="display:block; margin:0 auto; padding-top:20px">
                         <div class="product_name"><b>致富心態：關於財富、貪婪與幸福的20堂理財課</b></div>
                         <div class="product_author">作者：摩根．豪瑟</div>
-                        <div class="introduction" style="text-align:center; line-height:32px; color:#616161"><b>優惠價  <font color= #f54337>356</font> 元</b></div>
+                        <div class="introduction" style="text-align:center; line-height:60px; color:#616161"><b>優惠價  <font color= #f54337>356</font> 元</b></div>
                     </div></a>
                 </div>
                 <!--商品3-->
@@ -235,7 +252,7 @@
                         <img src="statics\img\product/p3.png" style="display:block; margin:0 auto; padding-top:20px">
                         <div class="product_name"><b><br> 灰階思考 </b></div>
                         <div class="product_author">作者：謝孟恭</div>
-                        <div class="introduction" style="text-align:center; line-height:32px; color:#616161"><b>優惠價  <font color= #f54337>316</font> 元</b></div>
+                        <div class="introduction" style="text-align:center; line-height:60px; color:#616161"><b>優惠價  <font color= #f54337>316</font> 元</b></div>
                     </div></a>
                 </div>
                 <!--商品4-->
@@ -244,7 +261,7 @@
                         <img src="statics\img\product/p4.jpg" style="display:block; margin:0 auto; padding-top:20px">
                         <div class="product_name"><b>投資最重要的事：一本股神巴菲特讀了兩遍的書</b></div>
                         <div class="product_author">作者：霍華．馬克斯</div>
-                        <div class="introduction" style="text-align:center; line-height:32px; color:#616161"><b>優惠價  <font color= #f54337>300</font> 元</b></div>
+                        <div class="introduction" style="text-align:center; line-height:60px; color:#616161"><b>優惠價  <font color= #f54337>300</font> 元</b></div>
                     </div></a>
                 </div>
             </div>
@@ -254,10 +271,10 @@
 
 <!--商品欄位(投資理財)--> 
 
-            <div style="padding-left: 240px">
+            <div style="padding-left: 300px">
                
                <!--熱銷書籍bar -->
-                <div style="border-radius:10px;  padding:5px; padding-left:10px; margin-bottom: 15px; margin-top: 400px; font-weight:bold; font-size:20px; width: 880px; color:#e57373; background-color:white; white-space:nowrap; border-bottom-color:#e57373; border-bottom-width:3px; border-bottom-style:solid">
+                <div  id="section2" style="border-radius:10px;  padding:5px; padding-left:10px; margin-bottom: 15px; margin-top: 400px; font-weight:bold; font-size:20px; width: 1320px; color:#e57373; background-color:white; white-space:nowrap; border-bottom-color:#e57373; border-bottom-width:3px; border-bottom-style:solid">
                      投資理財
                 </div>
 
@@ -267,7 +284,7 @@
                         <img src="statics\img\product/p5.jpg" style="display:block; margin:0 auto; padding-top:20px">
                         <div class="product_name"><b>富爸爸，窮爸爸</b></div>
                         <div class="product_author">作者：羅勃特‧T‧清崎</div>
-                        <div class="introduction" style="text-align:center; line-height:32px; color:#616161"><b>優惠價  <font color= #f54337>300</font> 元</b></div>
+                        <div class="introduction" style="text-align:center; line-height:60px; color:#616161"><b>優惠價  <font color= #f54337>300</font> 元</b></div>
                     </div></a>
                 </div>
                 <!--商品6-->
@@ -276,7 +293,7 @@
                         <img src="statics\img\product/p6.jpg" style="display:block; margin:0 auto; padding-top:20px">
                         <div class="product_name"><b>抓住飆股輕鬆賺2020</b></div>
                         <div class="product_author">作者：朱家泓</div>
-                        <div class="introduction" style="text-align:center; line-height:32px; color:#616161"><b>優惠價  <font color= #f54337>270</font> 元</b></div>
+                        <div class="introduction" style="text-align:center; line-height:60px; color:#616161"><b>優惠價  <font color= #f54337>270</font> 元</b></div>
                     </div></a>
                 </div>
                 <!--商品7-->
@@ -285,7 +302,7 @@
                         <img src="statics\img\product/p7.jpg" style="display:block; margin:0 auto; padding-top:20px">
                         <div class="product_name"><b> 6年存到300張股票2022修訂版：股子股息讓股息零成本 </b></div>
                         <div class="product_author">作者：陳重銘</div>
-                        <div class="introduction" style="text-align:center; line-height:32px; color:#616161"><b>優惠價  <font color= #f54337>316</font> 元</b></div>
+                        <div class="introduction" style="text-align:center; line-height:60px; color:#616161"><b>優惠價  <font color= #f54337>316</font> 元</b></div>
                     </div></a>
                 </div>
                 <!--商品8-->
@@ -294,17 +311,17 @@
                         <img src="statics\img\product/p8.jpg" style="display:block; margin:0 auto; padding-top:20px">
                         <div class="product_name"><b>只選主流股，買在關鍵價：股市10倍奉還！船長的股票關鍵價投資術</b></div>
                         <div class="product_author">作者： 黄仁慶（船長）</div>
-                        <div class="introduction" style="text-align:center; line-height:32px; color:#616161"><b>優惠價  <font color= #f54337>300</font> 元</b></div>
+                        <div class="introduction" style="text-align:center; line-height:60px; color:#616161"><b>優惠價  <font color= #f54337>300</font> 元</b></div>
                     </div></a>
                 </div>
             </div> 
             
 <!--商品欄位(情緒勒索)--> 
 
-            <div style="padding-left: 240px">
+            <div style="padding-left: 300px">
                
                 <!--熱銷書籍bar -->
-                 <div style="border-radius:10px;  padding:5px; padding-left:10px; margin-bottom: 15px; margin-top: 400px; font-weight:bold; font-size:20px; width: 880px; color:#e57373; background-color:white; white-space:nowrap; border-bottom-color:#e57373; border-bottom-width:3px; border-bottom-style:solid">
+                 <div id="section3" style="border-radius:10px;  padding:5px; padding-left:10px; margin-bottom: 15px; margin-top: 400px; font-weight:bold; font-size:20px; width: 1320px; color:#e57373; background-color:white; white-space:nowrap; border-bottom-color:#e57373; border-bottom-width:3px; border-bottom-style:solid">
                       情緒勒索
                  </div>
  
@@ -314,7 +331,7 @@
                          <img src="statics\img\product/p9.jpg" style="display:block; margin:0 auto; padding-top:20px">
                          <div class="product_name"><b>親密關係暴力：以愛為名的虐待與傷害</b></div>
                          <div class="product_author">作者：瑞秋．路易斯．斯奈德</div>
-                         <div class="introduction" style="text-align:center; line-height:32px; color:#616161"><b>優惠價  <font color= #f54337>379</font> 元</b></div>
+                         <div class="introduction" style="text-align:center; line-height:60px; color:#616161"><b>優惠價  <font color= #f54337>379</font> 元</b></div>
                      </div></a>
                  </div>
                  <!--商品10-->
@@ -323,7 +340,7 @@
                          <img src="statics\img\product/p10.jpg" style="display:block; margin:0 auto; padding-top:20px">
                          <div class="product_name"><b>都是李雅莉：「約會暴力」──誰都可能受害，卻誰也不敢說</b></div>
                          <div class="product_author">作者：李雅莉</div>
-                         <div class="introduction" style="text-align:center; line-height:32px; color:#616161"><b>優惠價  <font color= #f54337>308</font> 元</b></div>
+                         <div class="introduction" style="text-align:center; line-height:60px; color:#616161"><b>優惠價  <font color= #f54337>308</font> 元</b></div>
                      </div></a>
                  </div>
                  <!--商品11-->
@@ -332,7 +349,7 @@
                          <img src="statics\img\product/p11.jpg" style="display:block; margin:0 auto; padding-top:20px">
                          <div class="product_name"><b> 病態人格：是藏著惡意的善良，還是富有魅力的瘋狂？ </b></div>
                          <div class="product_author">作者：中野信子</div>
-                         <div class="introduction" style="text-align:center; line-height:32px; color:#616161"><b>優惠價  <font color= #f54337>221</font> 元</b></div>
+                         <div class="introduction" style="text-align:center; line-height:60px; color:#616161"><b>優惠價  <font color= #f54337>221</font> 元</b></div>
                      </div></a>
                  </div>
                  <!--商品12-->
@@ -341,7 +358,7 @@
                          <img src="statics\img\product/p12.jpg" style="display:block; margin:0 auto; padding-top:20px">
                          <div class="product_name"><b>這是我的名字</b></div>
                          <div class="product_author">作者：香奈兒．米勒（張小夏）</div>
-                         <div class="introduction" style="text-align:center; line-height:32px; color:#616161"><b>優惠價  <font color= #f54337>379</font> 元</b></div>
+                         <div class="introduction" style="text-align:center; line-height:60px; color:#616161"><b>優惠價  <font color= #f54337>379</font> 元</b></div>
                      </div></a>
                  </div>
              </div>
@@ -354,8 +371,9 @@
 <!-- 全館分類的vertical menu-->
         <style>
             .vertical-menu {
-              width: 180px;
-              font-size: 13px;
+              width: 240px;
+              font-size: 14px;
+              
             }
             
             .vertical-menu a {
@@ -377,20 +395,34 @@
         </style>
             <div class="left">
                 <div class="vertical-menu">
-                    <a class="active" style="border-top:8px #dfffb2 solid;border-bottom:8px #dfffb2 solid; font-size: 15px;"><center><strong>全館分類</strong></center></a>
-                    <a href="#">📢<strong> 熱銷書籍</strong></a>
-                    <a href="#">📢<strong> 限時特賣</strong></a>
-                    <a href="#"><strong>■ 電子書．有聲書</strong></a>
-                    <a href="#"><strong>■ 中文書</strong></a>
-                    <a href="#"><strong>■ 簡體書．外文書</strong></a>
-                    <a href="#"><strong>■ 雜誌</strong></a>
-                    <a href="#"><strong>■ 國中小參考書</strong></a>
-                    <a href="#"><strong>■ 考試用書</strong></a>
-                    <a href="#"><strong>■ 查看所有商品分類</strong></a>
+                    <a class="active" style="border-top:8px #dfffb2 solid;border-bottom:8px #dfffb2 solid; font-size: 16px;"><center><strong>全館分類</strong></center></a>
+                    <a href="#section1">📢<strong> 熱銷書籍</strong></a>
+                    <a href="#section2"><strong>■ 投資理財</strong></a>
+                    <a href="#section3"><strong>■ 情緒勒索</strong></a>
                 </div>
             </div>
 
+            <a href="index.html" id="gotop">
+                <i class="fa fa-angle-up"></i>
+            </a>
 
+            <!-- 一鍵返回 -->
+            <script type="text/javascript">
+                $(function() {
+                        $('#gotop').click(function(){
+                        $('html,body').animate({ scrollTop: 0 }, 'slow');   /* 返回到最頂上 */
+                        return false;
+                    });
+                    $(window).scroll(function() {
+                        if ( $(this).scrollTop() > 150){
+                            $('#gotop').fadeIn();
+                        } else {
+                            $('#gotop').fadeOut();
+                        }
+                    });
+                });
+                </script>  
+                
     </body>
 </html>
 
