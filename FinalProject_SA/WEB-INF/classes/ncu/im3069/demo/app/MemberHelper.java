@@ -71,7 +71,7 @@ public class MemberHelper {
             conn = DBMgr.getConnection();
             
             /** SQL指令 */
-            String sql = "DELETE FROM `members` WHERE `members_id` = ? LIMIT 1";
+            String sql = "DELETE FROM `project_sa`.`members` WHERE `members_id` = ? LIMIT 1";
             
             /** 將參數回填至SQL指令當中 */
             pres = conn.prepareStatement(sql);
@@ -131,7 +131,7 @@ public class MemberHelper {
             /** 取得資料庫之連線 */
             conn = DBMgr.getConnection();
             /** SQL指令 */
-            String sql = "SELECT * FROM `members`";
+            String sql = "SELECT * FROM `project_sa`.`members`";
             
             /** 將參數回填至SQL指令當中，若無則不用只需要執行 prepareStatement */
             pres = conn.prepareStatement(sql);
@@ -213,7 +213,7 @@ public class MemberHelper {
             /** 取得資料庫之連線 */
             conn = DBMgr.getConnection();
             /** SQL指令 */
-            String sql = "SELECT * FROM `members` WHERE `email` = ? AND `password` = ? LIMIT 1";
+            String sql = "SELECT * FROM `project_sa`.`members` WHERE `email` = ? AND `password` = ? LIMIT 1";
             
             /** 將參數回填至SQL指令當中 */
             pres = conn.prepareStatement(sql);
@@ -278,6 +278,38 @@ public class MemberHelper {
         return response;
     }
     
+	public boolean checkLogin(Member m){
+	        
+	        int row = -1;
+	        ResultSet rs = null;
+	        
+	        try {
+	            
+	            conn = DBMgr.getConnection();
+	            
+	            String sql = "SELECT count(*) FROM `project_sa`.`members` WHERE `email` = ? AND `password` = ?";
+	            String email = m.getEmail();
+	            String password = m.getPassword();
+	             
+	            pres = conn.prepareStatement(sql);
+	            pres.setString(1, email);
+	            pres.setString(2, password);
+	            
+	            rs = pres.executeQuery();
+	            rs.next();
+	            row = rs.getInt("count(*)");
+	            System.out.print(row);
+	
+	        } catch (SQLException e) {
+	            System.err.format("SQL State: %s\n%s\n%s", e.getErrorCode(), e.getSQLState(), e.getMessage());
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        } finally {
+	            DBMgr.close(rs, pres, conn);
+	        }
+	        return (row == 1) ? true : false;
+	    }
+    
     /**
      * 透過會員編號（ID）取得會員資料
      *
@@ -302,7 +334,7 @@ public class MemberHelper {
             /** 取得資料庫之連線 */
             conn = DBMgr.getConnection();
             /** SQL指令 */
-            String sql = "SELECT * FROM `members` WHERE `members_id` = ? LIMIT 1";
+            String sql = "SELECT * FROM `project_sa`.`members` WHERE `members_id` = ? LIMIT 1";
             
             /** 將參數回填至SQL指令當中 */
             pres = conn.prepareStatement(sql);
@@ -376,7 +408,7 @@ public class MemberHelper {
             /** 取得資料庫之連線 */
             conn = DBMgr.getConnection();
             /** SQL指令 */
-            String sql = "SELECT * FROM `members` WHERE `members_id` = ? LIMIT 1";
+            String sql = "SELECT * FROM `project_sa`.`members` WHERE `members_id` = ? LIMIT 1";
             
             /** 將參數回填至SQL指令當中 */
             pres = conn.prepareStatement(sql);
@@ -425,7 +457,7 @@ public class MemberHelper {
             /** 取得資料庫之連線 */
             conn = DBMgr.getConnection();
             /** SQL指令 */
-            String sql = "SELECT count(*) FROM `members` WHERE `email` = ?";
+            String sql = "SELECT count(*) FROM `project_sa`.`members` WHERE `email` = ?";
             
             /** 取得所需之參數 */
             String email = m.getEmail();
@@ -477,8 +509,8 @@ public class MemberHelper {
             /** 取得資料庫之連線 */
             conn = DBMgr.getConnection();
             /** SQL指令 */
-            String sql = "INSERT INTO `members`(`name`,`email`,`password`,`modified`,`created`,`login_times`,`status`) "
-            		+ "VALUES (?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO `project_sa`.`members`(`name`,`email`,`password`,`created`,`login_times`,`status`) "
+            		+ "VALUES (?,?,?,?,?,?)" ;
             		
             
             /** 取得所需之參數 */
@@ -494,9 +526,9 @@ public class MemberHelper {
             pres.setString(2, email);
             pres.setString(3, password);
             pres.setTimestamp(4, Timestamp.valueOf(LocalDateTime.now()));
-            pres.setTimestamp(5, Timestamp.valueOf(LocalDateTime.now()));
-            pres.setInt(6, login_times);
-            pres.setInt(7, status);
+            //pres.setTimestamp(5, Timestamp.valueOf(LocalDateTime.now()));
+            pres.setInt(5, login_times);
+            pres.setInt(6, status);
             
             /** 執行新增之SQL指令並記錄影響之行數 */
             row = pres.executeUpdate();
@@ -550,7 +582,7 @@ public class MemberHelper {
             /** 取得資料庫之連線 */
             conn = DBMgr.getConnection();
             /** SQL指令 */
-            String sql = "Update `members` SET `name` = ? ,`password` = ? , `modified` = ? WHERE `email` = ?";
+            String sql = "Update `project_sa`.`members` SET `name` = ? ,`password` = ? WHERE `email` = ?";
             /** 取得所需之參數 */
             String name = m.getName();
             String email = m.getEmail();
@@ -560,8 +592,8 @@ public class MemberHelper {
             pres = conn.prepareStatement(sql);
             pres.setString(1, name);
             pres.setString(2, password);
-            pres.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
-            pres.setString(4, email);
+            //pres.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
+            pres.setString(3, email);
             /** 執行更新之SQL指令並記錄影響之行數 */
             row = pres.executeUpdate();
 
@@ -611,7 +643,7 @@ public class MemberHelper {
             /** 取得資料庫之連線 */
             conn = DBMgr.getConnection();
             /** SQL指令 */
-            String sql = "Update `members` SET `login_times` = ? WHERE `members_id` = ?";
+            String sql = "Update `project_sa`.`members` SET `login_times` = ? WHERE `members_id` = ?";
             /** 取得會員編號 */
             int id = m.getID();
             
@@ -652,7 +684,7 @@ public class MemberHelper {
             /** 取得資料庫之連線 */
             conn = DBMgr.getConnection();
             /** SQL指令 */
-            String sql = "Update `members` SET `status` = ? WHERE `members_id` = ?";
+            String sql = "Update `project_sa`.`members` SET `status` = ? WHERE `members_id` = ?";
             /** 取得會員編號 */
             int id = m.getID();
             

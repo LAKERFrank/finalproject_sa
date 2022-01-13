@@ -71,7 +71,7 @@
 <!-- 會員、一條線、register的bar結束--> 
     
 <!-- 姓名，郵件，密碼、密碼確認-->  
-  <form id="form" accept-charset="utf-8">
+   <form id="form" action="#" method="post" accept-charset="utf-8">
     <div id="containName">
         
         <div id="namebox">
@@ -122,19 +122,19 @@
             <input id="member_confirmpw" type="password" size="55" style="height: 27px;"/>
         </div>
         
-    </div>
+    </div> 
+   
 <!-- 姓名，郵件，密碼、密碼確認結束--> 
     
 <!--確認按鈕-->
     <div id="registerbuttoncontainer">
         <div id="registerbutton" >
-            <button type="submit" id="submit"  style="outline: none;">
-                <span style="margin-left: 20px;">確認註冊</span>
-                <span style="margin-left: 20px;">Register</span>
-            </button>
+            <input type="button" id="submit" value="確認註冊">
         </div>
     </div>
-    <script>
+	<!--  <input type="button" value="註冊" id="submit">-->
+	</form>			
+    <script type="text/javascript">
 	    $(document).ready(function() {
 	// 處理表單點擊事件
 	    var $form = $('#submit');
@@ -184,7 +184,7 @@
 	                success: function (response) {
 	                    if(response.status == 200){
 	                        alert('註冊成功!');
-	                        window.location.assign("index.html");
+	                        window.location.assign("homepage.html");
 	                    }
 	                    else if(response.status == 400 ) {
 	                        console.log(response);
@@ -200,7 +200,6 @@
 	    }
 	});
 	</script>
-  </form>
 </body>
 
 

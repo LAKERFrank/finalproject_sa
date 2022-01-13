@@ -33,7 +33,7 @@ public class Member {
     private java.sql.Timestamp modified;
     
     /** login_times，更新時間的分鐘數 */
-    private int login_times;
+    private int login_times=0;
     
     /** status，會員之組別 */
     private int status;
@@ -50,10 +50,10 @@ public class Member {
      * @param password 會員密碼
      * @param name 會員姓名
      */
-    public Member(String email, String password, String name) {
+    public Member(String name,String email, String password) {
+    	setName(name);
         setEmail(email);
         setPassword(password);
-        setName(name);
         update();
     }
 
@@ -95,6 +95,11 @@ public class Member {
         setName(name);
         setLoginTimes(login_times);
         setStatus(status);
+    }
+    
+    public Member(String email, String password) {
+        setEmail(email);
+        setPassword(password);
     }
     
     /**
@@ -214,11 +219,11 @@ public class Member {
         /** 新建一個JSONObject用以儲存更新後之資料 */
         JSONObject data = new JSONObject();
         /** 取得更新資料時間（即現在之時間）之分鐘數 */
-        Calendar calendar = Calendar.getInstance();
-        this.login_times = calendar.get(Calendar.MINUTE);
+//        Calendar calendar = Calendar.getInstance();
+//        this.login_times = calendar.get(Calendar.MINUTE);
         /** 計算帳戶所屬之組別 */
 //        calcAccName();
-        
+        this.login_times+=1;
         /** 檢查該名會員是否已經在資料庫 */
         if(this.members_id != 0) {
             /** 若有則將目前更新後之資料更新至資料庫中 */

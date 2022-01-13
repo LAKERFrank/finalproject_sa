@@ -70,7 +70,7 @@
         <h1 id="signinenglishTitle">Sign In</h1>
     </div>
 <!--會員登入、線、sign in的bar結束-->
- <form id="form" accept-charset="utf-8">
+ <form id="form" action="#" method="post" accept-charset="utf-8">
     <div id="signincontainer">
         <div id="emailbox">
             <h1 id="emailname">電子信箱 ( E-mail )<span style="color:#f54337"> *</span></h1>
@@ -102,11 +102,10 @@
 
         <div id="loginbuttoncontainer">
             <div id="loginbutton">
-                <button type="submit" id="login" style="outline: none;">
-                    <span>登入</span>
-                </button>
+                <input type="button" value="登入" id="login" style="outline: none;">
             </div>
-        </div>
+        </div>  
+        <!-- <input type="button" value="登入" id="login"> -->
       </div>
     </form>
    <script>
@@ -117,9 +116,30 @@
 			    submit();
 			    });
 			    //新增COOKIE的函數
-			    function setCookie(cname, cvalue) {
-			        document.cookie = encodeURIComponent(cname) + "=" + encodeURIComponent(cvalue) + ";" + "path=/";
-			    }
+          function setCookie(cookieName, cookieValue, exdays) {	  
+            	var d = new Date();
+            	d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            	var expires = "expires="+d.toUTCString();
+            	document.cookie = cookieName + "=" + cookieValue + "; " + expires +";path=/";  
+           }
+          	
+	         //取cookies函式  
+				  function getCookie(cookieName) {
+        			var name = cookieName + "=";
+        			var decodedCookie = decodeURIComponent(document.cookie);
+        			var ca = decodedCookie.split(';');
+        			for(var i=0; i<ca.length; i++) {
+        			      var c = ca[i];
+        			      while (c.charAt(0)==' ') c = c.substring(1);
+        			      if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+        	  		}
+          			return "";
+        		}
+          	
+	          //刪除cookie
+	          function delCookie(name){
+	          		document.cookie = name   +"="+   cval   +";expires="+   exp.toGMTString();
+	          }
 			    function submit() {
 			        var email = $('#email').val();
 			        var password = $('#password').val();
@@ -135,7 +155,7 @@
 			        }
 			        else {
 			            var data_object = {
-			            'email': email,
+			            "email": email,
 			            "password": password
 			            };
 	
@@ -143,21 +163,23 @@
 			            var data_string = JSON.stringify(data_object);
 			            // 發出GET的AJAX請求
 			            $.ajax({
-			                type: "GET",
-			                url: "api/member.do",
+			                type: "POST",
+			                url: "api/login.do",
 			                data: data_string,
 			                crossDomain: true,
 			                cache: false,
 			                dataType: 'json',
 			                timeout: 5000,
-			                //成功會進入案件瀏覽網頁或顯示錯誤訊息
+			                //成功會進入首頁或顯示錯誤訊息
 			                success: function (response) {
 			                	if(response['status'] == 200) {
 			                        //看controller長怎樣抓id進去
 			                        console.log(response);
-			                        setCookie("userID", response.data[0]["id"]);
+			                        setCookie("member_email", response['email'],1);
+                            var parmem = getCookie("member_email");
 			                    	alert(response.message);
-			                    	window.location.assign("/index.html");
+			                    	//window.location.assign("homepage.html");
+                            parent.document.location.href = "homepage.html?member_email="+parmem;
 			                    }
 			                    else if(response.status != 200){
 			                            alert('此組合不存在!');
