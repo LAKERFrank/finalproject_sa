@@ -3,6 +3,7 @@ package ncu.im3069.demo.controller;
 import java.io.*;
 import java.net.URLDecoder;
 import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import org.json.*;
 import ncu.im3069.demo.app.Member;
@@ -20,6 +21,7 @@ import ncu.im3069.tools.JsonReader;
  * @version 1.0.0
  * @since 1.0.0
  */
+@WebServlet("/api/member.do")
 
 public class MemberController extends HttpServlet {
     
@@ -100,8 +102,18 @@ public class MemberController extends HttpServlet {
             String password = jsq.getString("password");
             /** 透過MemberHelper物件的getLogin()方法自資料庫取回該名會員之資料，回傳之資料為JSONObject物件 */
             JSONObject query = mh.getLogin(email, password);
-
-            jsr.response(query, response);
+            
+            
+//            if(!query.isEmpty()) {
+//            	JSONObject resp = new JSONObject();
+//                resp.put("status", "200");
+//                resp.put("message", "登入成功!");
+//            	jsr.response(query, response);
+//            }
+//            else {
+//            	String resp = "{\"status\": \'400\', \"message\": \'登入失敗！\', \'response\': \'\'}";
+//            	jsr.response(query, response);
+//            }
             
         }
 //    public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -109,7 +121,7 @@ public class MemberController extends HttpServlet {
 //        /** 透過JsonReader類別將Request之JSON格式資料解析並取回 */
 //        JsonReader jsr = new JsonReader(request);
 //        /** 若直接透過前端AJAX之data以key=value之字串方式進行傳遞參數，可以直接由此方法取回資料 */
-//        String id = jsr.getParameter("id");
+//        String id = jsr.getParameter("members_id");
 //        
 //        /** 判斷該字串是否存在，若存在代表要取回個別會員之資料，否則代表要取回全部資料庫內會員之資料 */
 //        if (id.isEmpty()) {

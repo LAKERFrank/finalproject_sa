@@ -33,9 +33,7 @@ public class OrderHelper {
             /** 取得資料庫之連線 */
             conn = DBMgr.getConnection();
             /** SQL指令 */
-            String sql = "DECLARE bookPrice int"
-            		+ "	SELECT `price` into bookPrice FROM `products` where `products_id` = ? LIMIT 1"
-            		+ "	INSERT INTO `orders`(`members_id`,`modified`,`created`,`total_price`) VALUES (?,?,?,?)";
+            String sql = "INSERT INTO `project_sa`.`orders`(`name`,`phone`,`created`,`store`,`pay_method`) VALUES (?,?,?,?,?)";
             
             /** 取得所需之參數 */
             String name = order.getName();
@@ -44,10 +42,9 @@ public class OrderHelper {
 //            String address = order.getAddress();
             String phone = order.getPhone();
             Timestamp create = order.getCreateTime();
-            Timestamp modify = order.getModifyTime();
-//            String store = order.getStore();
-//            String pay_method = order.getPay_method();
-            
+            String store = order.getStore();
+            String method = order.getPayMethod();
+//            Timestamp modify = order.getModifyTime();
             
             /** 將參數回填至SQL指令當中 */
             pres = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -55,9 +52,10 @@ public class OrderHelper {
 //            pres.setString(2, first_name);
 //            pres.setString(3, email);
 //            pres.setString(4, address);
-            pres.setString(5, phone);
-            pres.setTimestamp(6, create);
-            pres.setTimestamp(7, modify);
+            pres.setString(2, phone);
+            pres.setTimestamp(3, create);
+            pres.setString(4, store);
+            pres.setString(5, method);
             
             /** 執行新增之SQL指令並記錄影響之行數 */
             pres.executeUpdate();
@@ -108,7 +106,7 @@ public class OrderHelper {
             /** 取得資料庫之連線 */
             conn = DBMgr.getConnection();
             /** SQL指令 */
-            String sql = "SELECT * FROM `orders`";
+            String sql = "SELECT * FROM `project_sa`.`orders`";
             
             /** 將參數回填至SQL指令當中，若無則不用只需要執行 prepareStatement */
             pres = conn.prepareStatement(sql);
@@ -183,7 +181,7 @@ public class OrderHelper {
             /** 取得資料庫之連線 */
             conn = DBMgr.getConnection();
             /** SQL指令 */
-            String sql = "SELECT * FROM `orders` WHERE `orders_id` = ?";
+            String sql = "SELECT * FROM `project_sa`.`orders` WHERE `orders_id` = ?";
             
             /** 將參數回填至SQL指令當中，若無則不用只需要執行 prepareStatement */
             pres = conn.prepareStatement(sql);

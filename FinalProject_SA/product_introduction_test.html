@@ -179,12 +179,12 @@
     
     
     
-        </style>
+    </style>
     
         
-        </head>
-            <title> 書籍介紹 | 有購書鬍線上書城</title>
-        </head>
+    </head>
+        <title> 書籍介紹 | 有購書鬍線上書城</title>
+    </head>
     
     <!-- 書城的bar-->
         <body style="background-color:#d2f1ee; overflow: visible;">
@@ -224,72 +224,109 @@
                 </div>
                 <div style="border-radius: 3px; color:#3a5d55; font-weight: bold; font-size: 13px; background-color:#f1fbfa; margin-left: 1rem; margin-right: 1rem; margin-top: 2rem; padding: 10px">
                 > 中文書 > 電腦商品 > 商品介紹
-                </div>        
+            </div>        
 
             
 <!-- 預覽列的html -->
-                <div id="container" style="width:500px">
-                    <div id="product" style="width:250px; float: left; color:#616161; margin-left: 1rem; margin-right: 1rem; padding: 11rem">
-                        <div class="card" >
-                            <div class="top-section">
-                                <img id="image-container" src="statics\img\product/p13.jpg" alt=""  style="margin-top:5px; margin-left:3.5rem;float:left; display: inline;">
-                                
-                                <div style="margin-left: 21rem; margin-top: 2rem">  
-                                    <div class="name"><b>資料科學的統計實務：探索資料本質、扎實解讀數據，才是機器學習成功建模的第一步</b></div>
-                                    <br>
-                                    <br>
-                                    <div class="author" style="color:#a9a4a4">作者： 江崎貴裕</div>
-                                    <div class="translator" style="color:#a9a4a4">譯者： 温政堯</div>
-                                    <div class="publishing" style="color:#a9a4a4">出版社：旗標 </div>
-                                    <div class="languge" style="color:#a9a4a4">語言：繁體中文</div>
-                                    <div class="publish_time" style="color:#a9a4a4">出版日期：2021/11/01</div>
-                                    <div class="price" style="margin-left: 500px; font-size: 20px;">
-                                        <b>&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;優惠價：<font color= #f54337>473</font>元</b></div>
-                                    <br>
-                                    <hr size="8px" align="center" width="800px" style="border-top:1px dashed #7fcac3">
-                                    
-                                    
-                                </div>
-                                
-                                <div class="nav" style="margin-left:1px; margin-bottom: 5rem; ">
-                                    <div style="margin-top: 1rem;">
-                                        <img class="pic" width="74px" height="104px" onclick="change_img(this)" src="statics\img\product/p13.jpg" alt="" style="margin: 2px 2px;">
-                                        <img class="pic" width="74px" height="104px" onclick="change_img(this)" src="statics\img\product/p14.jpg" alt="" style="margin: 2px 2px;">
-                                        <img class="pic" width="74px" height="104px" onclick="change_img(this)" src="statics\img\product/p15.jpg" alt="" style="margin: 2px 2px;">
-                                        <img class="pic" width="74px" height="104px" onclick="change_img(this)" src="statics\img\product/p16.jpg" alt="" style="margin: 2px 2px;">   
-                                    </div>   
-                                    <h5 style=" font-size: 13px"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;運送方式：</b></h5>    
-                                    
-                                    <span >
-                                        <br>
-                                        <img height="25" width="25" src="statics/icon/711.png" style=" margin-left:5px; float: left; top: 25px;"> 
-                                        <font style="font-size: 9px; padding-left:8px;color:#a9a4a4;">可取貨點：學央門市、學屋門市、央大門市</font>
-                                    </span>
+                <div id = "introduction_panel" class = "row"></div>
 
-                                        <br>
-                                        <a onclick="myFunction()" class="btn" style="margin-left:280px; display: inline;">放入購物車</a>
+                    <h5 style=" font-size: 13px"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;運送方式：</b></h5>    
+                                    
+                        <span >
+                            <br>
+                                <img height="25" width="25" src="statics/icon/711.png" style=" margin-left:5px; float: left; top: 25px;"> 
+                                <font style="font-size: 9px; padding-left:8px;color:#a9a4a4;">可取貨點：學央門市、學屋門市、央大門市</font>
+                        </span>
+
+                            <br>
+                            <a onclick="myFunction()" class="btn" style="margin-left:280px; display: inline;">放入購物車</a>
                                         
-                                        <script>
-                                            function myFunction() {
-                                            confirm("已成功放入購物車！");
-                                            }
-                                        </script>
-                                </div>
-                                
+                                <script>
+                                    function myFunction() {
+                                    confirm("已成功放入購物車！");
+                                    }
+                                </script>
+                               
 
-                                
-
-                                <script type="text/javascript">
+                        <script type="text/javascript">
                                     var container = document.getElementById("image-container")
                                     function change_img(img){
                                         container.src = img.src;
                                     }
-                                </script>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>          
+                        </script>
+
+                        <script>
+                            function getIntroduction() {
+                            $.ajax({
+                                        type: "GET",
+                                        url: "api/product.do",
+                                        crossDomain: true,
+                                        cache: false,
+                                        dataType: 'json',
+                                        timeout: 5000,
+                                        success: function (response) {
+                                        if (response.status == 200) {
+                                            var introduction_panel = '';
+                                            
+                                            
+                                           // $.each(response.response.data, function (){
+                                                introduction_panel += addIntroduction(this);
+                                           // })
+                                            $("#introduction_panel").append(introduction_panel);
+                                            setButtonFunction();
+                                            checkIfExistInCart();
+                                        }
+                                        },
+                                        error: function () {
+                                        alert("無法連線到伺服器！");
+                                        }
+                                    });
+                            } 
+
+                            getIntroduction();
+
+                            function addIntroduction(data) {
+                            let inner_html = '';
+                            inner_html += '<div id="container" style="width:500px">';
+                            inner_html += '<div id="product" style="width:250px; float: left; color:#616161; margin-left: 1rem; margin-right: 1rem; padding: 11rem">';
+                            inner_html += '<div class="card" >';
+                            inner_html += '<div class="top-section">';
+                            inner_html += '<img id="image-container" src="statics\img\product/p13.jpg" alt=""  style="margin-top:5px; margin-left:3.5rem;float:left; display: inline;">';
+                            inner_html += '<div style="margin-left: 21rem; margin-top: 2rem">';
+                            inner_html += '<div class="name"><b>資料科學的統計實務：探索資料本質、扎實解讀數據，才是機器學習成功建模的第一步</b></div>';
+                            inner_html += '<br><br>';
+                            inner_html += '<div class="author" style="color:#a9a4a4">作者： 江崎貴裕</div>';
+                            inner_html += '<div class="translator" style="color:#a9a4a4">譯者： 温政堯</div>';
+                            inner_html += '<div class="publishing" style="color:#a9a4a4">出版社：旗標 </div>';
+                            inner_html += '<div class="languge" style="color:#a9a4a4">語言：繁體中文</div>';
+                            inner_html += '<div class="publish_time" style="color:#a9a4a4">出版日期：2021/11/01</div>';
+                            inner_html += '<div class="price" style="margin-left: 500px; font-size: 20px;"><b>&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;優惠價：<font color= #f54337>473</font>元</b></div>';
+                            inner_html += '<br>';
+                            inner_html += '<hr size="8px" align="center" width="800px" style="border-top:1px dashed #7fcac3">';
+                            inner_html += '</div>';
+                            inner_html += '</div></div></div></div>';
+                                        
+                            return inner_html;
+                            }
+
+                            function setButtonFunction() {
+                            $('button[name="add_cart"]').click(function () {
+                                var action = (this.id).split('_')[0];
+                                var destination = (this.id).split('_')[1];
+                                var id = (this.id).split('_')[2];
+                                addProductToCart(id, 1);
+                            });
+                            }
+
+                            function addProductToCart(id, amount) {
+                            if (!(client_cart_obj.includes(id))) {
+                                client_cart_obj.push(id);
+                                client_cart_amount.push(amount);
+                                updateCartDataToClent();
+                            }
+                        }
+
+
+                        </script>         
         </body>
 </html>
-    
