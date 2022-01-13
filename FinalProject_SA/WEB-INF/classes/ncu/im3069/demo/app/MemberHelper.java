@@ -582,7 +582,7 @@ public class MemberHelper {
             /** 取得資料庫之連線 */
             conn = DBMgr.getConnection();
             /** SQL指令 */
-            String sql = "Update `project_sa`.`members` SET `name` = ? ,`password` = ? , `modified` = ? WHERE `email` = ?";
+            String sql = "Update `project_sa`.`members` SET `name` = ? ,`password` = ? WHERE `email` = ?";
             /** 取得所需之參數 */
             String name = m.getName();
             String email = m.getEmail();
@@ -592,8 +592,8 @@ public class MemberHelper {
             pres = conn.prepareStatement(sql);
             pres.setString(1, name);
             pres.setString(2, password);
-            pres.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
-            pres.setString(4, email);
+            //pres.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
+            pres.setString(3, email);
             /** 執行更新之SQL指令並記錄影響之行數 */
             row = pres.executeUpdate();
 

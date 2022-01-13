@@ -179,12 +179,12 @@
     
     
     
-        </style>
+    </style>
     
         
-        </head>
-            <title> 書籍介紹 | 有購書鬍線上書城</title>
-        </head>
+    </head>
+        <title> 書籍介紹 | 有購書鬍線上書城</title>
+    </head>
     
     <!-- 書城的bar-->
         <body style="background-color:#d2f1ee; overflow: visible;">
@@ -223,8 +223,9 @@
                     </ul>
                 </div>
                 <div style="border-radius: 3px; color:#3a5d55; font-weight: bold; font-size: 13px; background-color:#f1fbfa; margin-left: 1rem; margin-right: 1rem; margin-top: 2rem; padding: 10px">
-                > 中文書 > 電腦商品 > 商品介紹</div>  
-           	</div>    
+                > 中文書 > 電腦商品 > 商品介紹
+            </div>        
+
             
 <!-- 預覽列的html -->
                 <div id = "introduction_panel" class = "row"></div>
@@ -245,9 +246,7 @@
                                     confirm("已成功放入購物車！");
                                     }
                                 </script>
-                            
-
-                                
+                               
 
                         <script type="text/javascript">
                                     var container = document.getElementById("image-container")
@@ -269,10 +268,10 @@
                                         if (response.status == 200) {
                                             var introduction_panel = '';
                                             
-                                            $.each(response.response.data, function (){
-                                                introduction_panel += addIntroduction(this);
-                                            })
                                             
+                                           // $.each(response.response.data, function (){
+                                                introduction_panel += addIntroduction(this);
+                                           // })
                                             $("#introduction_panel").append(introduction_panel);
                                             setButtonFunction();
                                             checkIfExistInCart();
@@ -305,28 +304,29 @@
                             inner_html += '<br>';
                             inner_html += '<hr size="8px" align="center" width="800px" style="border-top:1px dashed #7fcac3">';
                             inner_html += '</div>';
-                            inner_html += '';
+                            inner_html += '</div></div></div></div>';
                                         
                             return inner_html;
                             }
 
-                                    function setButtonFunction() {
-                                    $('button[name="add_cart"]').click(function () {
-                                        var action = (this.id).split('_')[0];
-                                        var destination = (this.id).split('_')[1];
-                                        var id = (this.id).split('_')[2];
-                                        addProductToCart(id, 1);
-                                    });
-                                    }
+                            function setButtonFunction() {
+                            $('button[name="add_cart"]').click(function () {
+                                var action = (this.id).split('_')[0];
+                                var destination = (this.id).split('_')[1];
+                                var id = (this.id).split('_')[2];
+                                addProductToCart(id, 1);
+                            });
+                            }
 
-                                    function addProductToCart(id, amount) {
-                                    if (!(client_cart_obj.includes(id))) {
-                                        client_cart_obj.push(id);
-                                        client_cart_amount.push(amount);
-                                        updateCartDataToClent();
-                                    }
-                                  }
-                        </script>
+                            function addProductToCart(id, amount) {
+                            if (!(client_cart_obj.includes(id))) {
+                                client_cart_obj.push(id);
+                                client_cart_amount.push(amount);
+                                updateCartDataToClent();
+                            }
+                        }
+
+
+                        </script>         
         </body>
 </html>
-    

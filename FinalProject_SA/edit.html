@@ -69,6 +69,7 @@
 <!-- 修改會員資料、一條線、modify的bar--> 
     
 <!-- 姓名，郵件，密碼、密碼確認、更新、組別-->  
+<form action="#" method="post">
     <div id="containName">
         
         <div id="namebox">
@@ -121,9 +122,9 @@
         
     </div>
 
-    <div id="containupdate">
+           <!-- 這邊應該不是input，修的人注意 --><!--  <div id="containupdate">
         
-        <!-- 這邊應該不是input，修的人注意 -->
+ 
         <div id="updatebox">
             <h1 id="updatechinese">更新時間</h1>
             <h1 id="updateenglish">Update Time</h1>
@@ -133,11 +134,11 @@
             <input id="updatetime" type="text" size="55"  style="height: 27px;"/>
         </div>
         
-    </div>
+    </div>-->
 
-    <div id="containgroup">
+    <!-- 這邊應該不是input，修的人注意 --> <!--  <div id="containgroup">
 
-        <!-- 這邊應該不是input，修的人注意 -->
+       
         <div id="groupbox">
             <h1 id="groupchinese">會員組別</h1>
             <h1 id="groupenglish">Member Group</h1>
@@ -147,16 +148,79 @@
             <input id="group" type="text" size="55"  style="height: 27px;"/>
         </div>
         
-    </div>
+    </div>-->
 <!-- 姓名，郵件，密碼、密碼確認、更新、組別結束--> 
     
 <!--更新按鈕-->
     <div id="renewbuttoncontainer">
         <div id="renewbutton">
-            <input type="button" value="更新" onclick="location.href='member_area.html'" style="outline: none;">
+            <input type="button" value="更新" id="submit" style="outline: none;">
         </div>
     </div>
-    
+    </form>
+     <script type="text/javascript">
+     $(document).ready(function() {    
+    	    //從cookie抓取使用者ID的函數
+    	    //function getCookie(name) {
+    	       // const value = `; ${document.cookie}`;
+    	        //const parts = value.split(`; ${name}=`);
+    	       // if (parts.length === 2) return parts.pop().split(';').shift();
+    	  //  }
+    	    //console.log(getCookie('members_id'));
+    	    var $form = $('#submit');
+    	    $form.click(function() {
+    	        updateMember();
+    	    });
+    	    
+    	    function updateMember() {
+    	        var name = $('#name').val();
+    	        var email = $('#email').val();
+    	        var password = $('#pw').val();
+    	        var confirm_password = $('#confirmpw').val();
+
+    	        var password_rule = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+    	        if(!password_rule.test(password)) {
+    	            alert("密碼格式不符，長度至少8，且至少包含一個數字和英文字母！");
+    	        }
+    	        else if(password != confirm_password ) {
+    	            alert("密碼驗證不相同");
+    	        }
+    	        else {
+    	                // 將資料組成JSON格式
+    	                var data_object = {
+    	                    //"id": getCookie('userID'),
+    	                    "name": name,
+    	                    "email": email,
+    	                    "password": password
+    	                };
+    	                
+    	                // 將JSON格式轉換成字串
+    	                var data_string = JSON.stringify(data_object);
+    	                console.log(data_string);
+    	                // 發出POST的PUT請求
+    	                $.ajax({
+    	                    type: "PUT",
+    	                    url: "api/update.do",
+    	                    data: data_string,
+    	                    crossDomain: true,
+    	                    cache: false,
+    	                    dataType: 'json',
+    	                    timeout: 5000,
+    	                    success: function (response) {
+    	                        if(response.status == 200){
+    	                            alert('修改成功!');
+    	                            window.location.assign("member_area.html");
+    	                        }
+    	                    },
+    	                    error: function () {
+    	                        alert("無法連線到伺服器！");
+    	                    }
+    	                });
+    	        }
+    	    }
+    	});
+     </script>
 
 </body>
 

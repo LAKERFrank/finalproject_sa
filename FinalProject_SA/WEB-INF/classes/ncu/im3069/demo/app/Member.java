@@ -50,10 +50,10 @@ public class Member {
      * @param password 會員密碼
      * @param name 會員姓名
      */
-    public Member(String email, String password, String name) {
+    public Member(String name,String email, String password) {
+    	setName(name);
         setEmail(email);
         setPassword(password);
-        setName(name);
         update();
     }
 
