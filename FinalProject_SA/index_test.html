@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <!-- Bootstrap core CSS -->
+        <link href="statics/css/bootstrap.min.css" rel="stylesheet">
+        <link href="statics/css/font-awesome.min.css" rel="stylesheet">
+        <link href="statics/icon/favicon.ico" type="image/x-icon" rel="icon">
+        <link href="statics/icon/favicon.ico" type="image/x-icon" rel="shortcut icon">
+        
+
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Jekyll v3.8.5">
+        <!-- rwd -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            .bd-placeholder-img {
+             font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            }
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+                    
+                }
+            }
+        </style>
+
+        <!-- Custom styles for this template -->
+        <link href="statics/css/product.css" rel="stylesheet">
+        <link href="statics/css/jquery-confirm.css" rel="stylesheet">
+
+        <script src="statics/js/jquery-3.4.1.min.js"></script>
+        <script src="statics/js/jquery-confirm.js"></script>
+        
+<!--自寫css(分區)-->
+    <link rel="stylesheet" href="statics/css/div.css">
+
+<!--字寫css_一鍵上拉  -->
+<style>
+    #gotop {
+    position:fixed;
+    outline:none;
+    z-index:90;
+    right:30px;
+    bottom:31px;
+    display:none;
+    width:50px;
+    height:50px;
+    color:#fff;
+    background:#009588;
+    line-height:50px;
+    border-radius:50%;
+    transition:all 0.35s;
+    text-align: center;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    }
+    #gotop :hover{
+    background:#00796b;
+    }
+</style>
+
+<!--自寫css(button)-->
+    <style>
+    /* outline属性去掉淡蓝色边框 */
+    input{
+        outline:none;
+    }
+
+    /*搜尋欄位框(含bar跟button)*/
+    .search{
+        position: relative;
+        width: 50%;
+        float: left;
+        margin-left:300px;
+        margin-top: 5px;
+        display:inline;
+    
+        }
+
+    /*搜尋按鈕*/
+    .search-btn{
+        width: 100px;
+        height: 35px;
+        background-color: #009588;
+        color: white;
+        outline:none;
+        border: 2px solid #009588;
+        cursor: pointer; 
+        position: absolute;
+        top: 0;
+        right: -380px; 
+        }
+        
+    /*搜尋欄位框(bar)*/
+    .search-bar{
+        width: 1320px;
+        height: 35px;
+        font-size: 13px;
+        color:#3a5d55;
+        padding:9px;
+        border: 3px solid #009588;
+        background-color: white;
+        }
+
+    /*預設提醒字*/    
+    input::placeholder { 
+        color: #87b1ad;
+        font-size: 13px;
+    }
+
+    /*推薦關鍵字*/
+    ul li a {
+        color:#00796b;
+        padding-right: 8px;
+        display:inline;
+        font-weight:bold;
+        font-size: 13px;
+        }
+    ul li {
+        color:#00796b;
+        padding-left: 10px;
+        padding-right: 10px;
+        display:inline;
+        font-weight:bold;
+        font-size: 13px;
+        }
+
+    </style>
+
+        <title> 首頁 | 有購書鬍線上書城</title>
+    </head>
+
+<!-- 書城的bar-->
+    <body style="background-color:#d2f1ee; overflow: visible;">
+
+        <div class="top d-flex flex-column flex-md-row align-items-center border-bottom shadow-sm" >
+
+            <div class="mr-auto p-1"><a href="index.html" title="首頁"><img src="statics/icon/YOGOBOOKSTORE.png" alt="" width="13.2%"></a></div>
+                    
+            <div class="d-flex flex-row">
+                
+                <a href="mycart.html" title="購物車"><img src="statics/icon/cart.png" alt="" width="35" height="35" style="margin-right:6px"></a>
+                <a class="p-2" href="member_area.html" style="color:#00796b; font-size:13px; text-decoration:none;"><nobr><strong>會員專區</strong></nobr></a>
+
+
+                
+                <!-- 要寫js盼測登入，在來才會跳轉會員中心 
+                <a class="p-2" href="order.html" style="color:#d2f1ee; font-size:13px; text-decoration:none;"><nobr><strong>會員專區</strong></nobr></a>
+                -->      
+            </div> 
+        </div>
+
+<!-- 搜尋欄位-->
+        <div class="main" style="background-color:#b9dfdb; padding: 9px">
+            <div class="search" >
+                <input class="search-bar" type="search" name="search" id="search" placeholder="  輸入想搜尋的書籍、作者名稱、出版社…">
+                <button class="search-btn" style="outline: none;"><strong>🔍</strong></button>
+            </div>
+
+            <div style="padding: 8px; white-space:nowrap;">
+         
+            </div>
+
+        <!--css商品陳列-->
+            <style>
+
+            .product1, .product2, .product3, .product4{
+                 /*與search bar的距離*/
+                width:330px;
+                height:350px;
+                background-color: white;
+                vertical-align: center;  
+                position:relative;
+                display: flex;
+                justify-content: center; 
+                float:left;
+                overflow: hidden;
+                flex-wrap: nowrap;
+            }
+
+            .product1 .p1 img, .product2 .p2 img, .product3 .p3 img, .product4 .p4 img{
+                width: 150px;
+                height: 220px;
+            }
+            .p1, .p2, .p3, .p4{
+                width: 150px;
+                height: 200px;
+            }
+
+            .product_name{
+                color: #616161;
+                margin-top: 5px;
+                font-size: 13px;
+            }
+            .product_author{
+                color: #c4bebe;
+                margin-top: 2px;
+                font-size: 13px;
+            }
+
+            .introduction{
+                margin-top: 20px;
+                width: 340px;
+                height:60px;
+                background-color: #7fcac3;
+                position:absolute;
+                left:0;
+                right:0;
+                bottom: 0px;
+                vertical-align: center;
+            }
+
+            </style>
+
+
+<!--商品欄位(熱銷書籍)--> 
+
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <h1 class="display-4">商品列表</h1>
+            <p class="lead">以下是所有商品包含其ID、品名、價格與說明</p>
+        </div>
+
+        <div class="album py-5 bg-light">
+            <div class="container">
+            <div id="product_panel" class="row">
+            </div>
+            </div>
+        </div>
+
+        <script>   
+            var [client_cart_obj, client_cart_amount]  = getCartDataFromClient();
+            
+            function getAllProduct() {
+              $.ajax({
+                type: "GET",
+                url: "api/product.do",
+                crossDomain: true,
+                cache: false,
+                dataType: 'json',
+                timeout: 5000,
+                success: function (response) {
+                  if (response.status == 200) {
+                    var product_panel = '';
+                    
+                    $.each(response.response.data, function (){	
+                        product_panel += addProduct(this);
+                    })
+                    
+                    $("#product_panel").append(product_panel);
+                    setButtonFunction();
+                    checkIfExistInCart();
+                  }
+                },
+                error: function () {
+                  alert("無法連線到伺服器！");
+                }
+              });
+            }
+        
+            getAllProduct();
+            
+            function addProduct(data) {
+                let inner_html = '';
+                inner_html += '<div class="col-md-4">';
+                inner_html += '<div class="card-header">';
+                inner_html += '<h4 class="font-weight-normal text-center text-truncate">' + data.name + '</h4>';
+                inner_html += '</div>';
+                inner_html += '<div class="card mb-4 shadow-sm">';
+                inner_html += '<img src="statics/img/product/' + data.image + '" width="100%">';
+                inner_html += '<div class="card-body">';
+                inner_html += '<h1 class="card-title pricing-card-title">$' + data.price + ' <small class="text-muted">/ USD</small></h1>';
+                inner_html += '<p class="card-text">' + data.author + '</p>';
+                inner_html += '<p class="card-text">' + data.publisher + '</p>';
+                inner_html += '<p class="card-text">' + data.stock + '</p>';
+                inner_html += '<div class="d-flex justify-content-between align-items-center">';
+                inner_html += '<div class="btn-group">';
+                inner_html += '<button id="add_cart_' + data.id + '" name="add_cart" type="button" class="btn btn-lg btn-block btn-outline-primary">加入購物車</button>';
+                inner_html += '</div><small class="text-muted">id: ' + data.id + '</small>';
+                inner_html += '</div></div></div></div>';
+                
+                return inner_html;
+            }
+            
+            function setButtonFunction() {
+                $('button[name="add_cart"]').click(function () {
+                    var action = (this.id).split('_')[0];
+                    var destination = (this.id).split('_')[1];
+                    var id = (this.id).split('_')[2];
+                    addProductToCart(id, 1);
+                });
+            }
+            
+            function getCartDataFromClient() {
+                let cart = JSON.parse(localStorage.getItem("client_cart_obj"));
+                let amount = JSON.parse(localStorage.getItem("client_cart_amount"));
+                cart = !cart ? new Array() : cart;
+                amount = !amount ? new Array() : amount;
+                return [cart, amount];
+            }
+            
+            function addProductToCart(id, amount) {
+                if (!(client_cart_obj.includes(id))) {
+                    client_cart_obj.push(id);
+                    client_cart_amount.push(amount);
+                    updateCartDataToClent();
+                }
+                
+                checkIfExistInCart();
+            }
+            
+            function updateCartDataToClent() {
+                localStorage.setItem("client_cart_obj", JSON.stringify(client_cart_obj));
+                localStorage.setItem("client_cart_amount", JSON.stringify(client_cart_amount));
+            }
+            
+            function checkIfExistInCart() {
+                $('button[name="add_cart"]').each(function (){
+                    var action = (this.id).split('_')[0];
+                    var destination = (this.id).split('_')[1];
+                    var id = (this.id).split('_')[2];
+                    if (client_cart_obj.includes(id)) {
+                        setButtonState(this.id, false);
+                    }
+                    else {
+                        setButtonState(this.id, true);
+                    }
+                    
+                });
+            }
+            
+            function setButtonState(id, action) {
+                if (!action) {
+                    $('#' + id).prop('disabled', true);
+                    $('#' + id).addClass('disabled');
+                    $('#' + id).html('已加入');
+                }
+                else {
+                    $('#' + id).prop('disabled', false);
+                    $('#' + id).removeClass('disabled');
+                    $('#' + id).html('加入購物車');
+                }
+            }
+          </script>
+
+
+<!-- 全館分類的vertical menu-->
+        <style>
+            .vertical-menu {
+              width: 240px;
+              font-size: 14px;
+              
+            }
+            
+            .vertical-menu a {
+              background-color: #eee;
+              color: #3a5d55;
+              display: block;
+              padding: 12px;
+              text-decoration: none;
+            }
+            
+            .vertical-menu a:hover {
+              background-color: #ccc;
+            }
+            
+            .vertical-menu a.active {
+              background-color: #f0ffe0;
+              color: #3a5d55;
+            }
+        </style>
+            <div class="left">
+                <div class="vertical-menu">
+                    <a class="active" style="border-top:8px #dfffb2 solid;border-bottom:8px #dfffb2 solid; font-size: 16px;"><center><strong>全館分類</strong></center></a>
+                    <a href="#section1">📢<strong> 熱銷書籍</strong></a>
+                    <a href="#section2"><strong>■ 投資理財</strong></a>
+                    <a href="#section3"><strong>■ 情緒勒索</strong></a>
+                </div>
+            </div>
+
+            <a href="index.html" id="gotop">
+                <i class="fa fa-angle-up"></i>
+            </a>
+
+            <!-- 一鍵返回 -->
+            <script type="text/javascript">
+                $(function() {
+                        $('#gotop').click(function(){
+                        $('html,body').animate({ scrollTop: 0 }, 'slow');   /* 返回到最頂上 */
+                        return false;
+                    });
+                    $(window).scroll(function() {
+                        if ( $(this).scrollTop() > 150){
+                            $('#gotop').fadeIn();
+                        } else {
+                            $('#gotop').fadeOut();
+                        }
+                    });
+                });
+                </script>  
+                
+    </body>
+</html>
